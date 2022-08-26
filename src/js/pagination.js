@@ -1,11 +1,18 @@
-const list = document.querySelector(".pagination-list");
-let totalPages = 20;
+import { fetchData } from './getPopularFilms';
 
-let page = 10;
+const pagList = document.querySelector(".pagination-list");
 
-list.innerHTML = createPagination(totalPages, page);
+let totalPages = 10;
 
-function createPagination(totalPages, page){
+let page = 1;
+
+pagList.innerHTML = createPagination(totalPages, page);
+
+async function createPagination(totalPages, page) {
+  
+  const response = await fetchData(); 
+  console.log(response.total_pages);
+
   let liTag = '';
   let active;
 
@@ -57,7 +64,7 @@ function createPagination(totalPages, page){
     liTag += `<li class="pagination-item btn-next" onclick="createPagination(totalPages, ${page + 1})"><span class="arrow"></span></li>`;
   }
 
-  list.innerHTML = liTag; 
+ pagList.innerHTML = liTag; 
   return liTag; 
 }
 //  createPagination(20, 5)
