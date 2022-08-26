@@ -7,8 +7,8 @@ async function fetchData() {
     api_key: `${refs.API_KEY}`,
     page: 1,
   });
-  const response = await axios.get(`${refs.BASE_URL}?${parametrs}`)
-    .then(value => console.log(value))
+  const response = await axios.get(`${refs.POPULAR_URL}?${parametrs}`)
+    .then(response => console.log(response))
     .catch(error => console.log(error))
 }
 
