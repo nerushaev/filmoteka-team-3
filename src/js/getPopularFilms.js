@@ -12,4 +12,4 @@ async function fetchData() {
     .catch(error => console.log(error))
 }
 
-fetchData();
+// fetchData();
