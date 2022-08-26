@@ -3,13 +3,54 @@ import { refs } from './refs'
 
 async function fetchData() {
   const parametrs = new URLSearchParams({
-    media_type: "movie",
     api_key: `${refs.API_KEY}`,
     page: 1,
   });
-  const response = await axios.get(`${refs.BASE_URL}?${parametrs}`)
-    .then(value => console.log(value))
-    .catch(error => console.log(error))
+  try {
+    const response = await axios.get(`${refs.POPULAR_URL}?${parametrs}`)
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-fetchData();
+
+window.addEventListener("DOMContentLoaded", loadHomePage);
+
+async function loadHomePage() {
+  try {
+    const response = await fetchData();    
+    renderMarkupPopularFilms(response.results);
+  } catch (err) {
+    console.log(err);
+  } 
+
+}
+
+const homePageGallery = document.querySelector(".gallery__set");
+
+function renderMarkupPopularFilms(data) {
+  const markup = data.map(
+      ({
+        backdrop_path,
+        genre_ids,
+        release_date,
+        title,
+      }) => {
+      return `<li class="gallery__item">
+                <a  class="gallery__item__link" target="_blank" rel="noopener noreferrer">
+                    <img src="${refs.IMG_URL}${backdrop_path}" alt="${title}" class="gallery__item__img">
+                    <div class="gallery__item__text">
+                        <h3 class="gallery__item__title">${title}</h3>
+                        <div class="gallery__item__descr">
+                            <span class="genre">${genre_ids}</span>
+                            <span class="slash">|</span>
+                            <span class="year">${release_date.slice(0, 4)}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>`;
+      }).join('');
+
+  homePageGallery.insertAdjacentHTML('beforeend', markup);
+}
