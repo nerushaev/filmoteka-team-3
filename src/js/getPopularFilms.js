@@ -3,7 +3,6 @@ import { refs } from './refs'
 
 async function fetchData() {
   const parametrs = new URLSearchParams({
-    media_type: "movie",
     api_key: `${refs.API_KEY}`,
     page: 1,
   });
