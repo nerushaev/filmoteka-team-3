@@ -9,7 +9,7 @@ async function getMovie(e) {
     api_key: `${refs.API_KEY}`,
   });
   const response = await axios.get(`${refs.SEARCH_URL}?${parametrs}`)
-    .then(response => console.log(response))
+    .then(response => console.log(response.data.results))
     .catch(error => console.log(error))
 }
 
