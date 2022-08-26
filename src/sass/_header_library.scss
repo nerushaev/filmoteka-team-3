@@ -1,0 +1,101 @@
+.library_header {
+    background-color: darkred;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include mq(mobile-only) {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_sm.jpg);
+        padding: 0px 20px 62px;
+    }
+
+    @include mq(mobile-only) {
+         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_sm2x.jpg);
+         padding: 0px 20px 62px;
+    }
+
+   @include mq(tablet-only) {
+         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_md.jpg);
+         padding: 0px 32px 60px;
+         }
+
+    @include mq(tablet-only) {
+         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_md2x.jpg);
+         padding: 0px 20px 60px;
+         }
+   @include mq(desktop) {
+       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_lg.jpg);
+       padding: 0px 32px 60px;
+   }
+
+   @include mq(desktop) {
+       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/header_library/rectangle_lg2x.jpg);
+       padding: 0px 20px 60px;
+   }
+}
+
+
+.header__buttons{
+    display: flex;
+    justify-content: center;
+   // padding-bottom: 60px;
+}
+
+.btn__list {
+    display: flex;
+}
+
+.btn__items {
+    // font-style: normal;
+    // font-weight: 500;
+    // font-size: 12px;
+    // line-height: 1.33;
+    
+        //     color: #fff;
+        //     text-transform: uppercase;
+    
+    // display: flex;
+    align-items: center;
+}
+
+.btn__items:not(:last-child) {
+    margin-right: 20px;
+     
+    @include mq(tablet-only) {
+        margin-right: 32px;
+    }
+
+    @include mq(desktop) {
+        margin-right: 16px;
+    }
+
+    // display: flex;
+        // margin: 0;
+        // padding: 0;
+}
+
+.btn__library {
+    width: 148px;
+    height: 42px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+
+    background-color: transparent;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+   
+    // align-items: center;
+    // text-align: center;
+}
+
+.btn__is-active {
+    background-color: #FF6B01;
+    border: transparent;
+}
