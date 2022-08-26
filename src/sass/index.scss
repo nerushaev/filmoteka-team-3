@@ -1,9 +1,13 @@
 @import './utils/mixins';
 @import './base/common';
 @import './base/reset';
+
+@import './testFunctionForModal';
+
 @import './base/container';
 
 @import './modal';
 @import './header_home_page';
 @import './header_library';
 @import './gallery_main';
+
