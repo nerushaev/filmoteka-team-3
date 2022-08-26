@@ -8,7 +8,7 @@ async function fetchData() {
     page: 1,
   });
   const response = await axios.get(`${refs.POPULAR_URL}?${parametrs}`)
-    .then(response => console.log(response))
+    .then(response => console.log(response.data.results))
     .catch(error => console.log(error))
 }
 
