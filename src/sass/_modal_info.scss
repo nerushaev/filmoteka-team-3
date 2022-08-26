@@ -12,11 +12,11 @@
     pointer-events: initial;
     transition: opacity 250ms linear, visibility 250ms linear;
 }
-/*.backdrop.is-hidden {
+.backdrop__is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-}*/
+}
 .modal-wrapper{
     position: absolute;
     left: 50%;
@@ -55,9 +55,11 @@
     width: 30px;
     height: 30px;
 
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: #FF6B01;
     cursor: pointer;
-    }
+}
+
 .modal-btn--svg{
     fill: #000000;
 }
@@ -176,4 +178,13 @@ justify-content: space-between;
         width: 136px;
         margin-left: 18px;
             }       
+}
+
+// Test open modal info
+.one__card {
+    display: inline-block;
+    padding: 15px 20px;
+    color: #fff;
+    background-color:darkblue;
+    border-radius: 22px;
 }
