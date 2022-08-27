@@ -1,14 +1,8 @@
 
-ul{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-
-}
 .header{
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: #000;
 
     @include mq(mobile-only) {
         background-image: url(../images/header_home_page/header_sm.png);
@@ -21,14 +15,14 @@ a{
     @include mq(tablet-only){
         background-image: url(../images/header_home_page/header_md.png);
     }
-    @include mq(tablet-only){
+    @include mq(retina){
         background-image: url(../images/header_home_page/header_md@2x.png);
     }
 
     @include mq(desktop){
         background-image: url(..//images/header_home_page/header_lg.png);
     }
-    @include mq(desktop){
+    @include mq(retina){
         background-image: url(../images/header_home_page/header_lg@2x.png);
     }
 
@@ -136,6 +130,7 @@ a{
 
 .header__form--data{
     position: relative;
+    display: flex;
 }
 
 .form-icon{
@@ -144,6 +139,18 @@ a{
     right: 0;
 }
 
+.form-notification{
+    position: absolute;
+    top: 40px;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #FF001B;
+}
+.hidden {
+    display: none;
+}
 .nav__link--current::after{
     content: "";
     display: block;

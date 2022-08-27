@@ -1,0 +1,78 @@
+.pagination{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.pagination-icon{
+    position: absolute;
+    right: 0;
+    fill: #000;
+}
+.arrow{
+    display: block;
+    background-color: #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+}
+.pagination-list {
+    display: flex;
+}
+
+.pagination-item {
+    color:  #000000;;
+    list-style: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    text-align: center;
+
+    padding: 12px 13px;
+    
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.pagination-item.numb {
+    list-style: none;
+    margin: 0 px;
+    border-radius: 5px;
+}
+
+.pagination-item.dots {
+    font-size: 12px;
+    cursor: default;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pagination-item.btn-next,
+ .pagination-item.btn-prev{
+    position: relative;
+    background: #F7F7F7;
+    border-radius: 5px;
+    // transform: matrix(-1, 0, 0, 1, 0, 0);
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    padding: 0 20px;
+}
+
+.pagination-item.active,
+.pagination-item.numb:hover,
+.pagination-item:first-child:hover,
+.pagination-item:last-child:hover {
+    color: #fff;
+    background: #FF6B08;
+}

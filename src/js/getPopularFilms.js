@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { refs } from './refs'
 
-async function fetchData() {
+export async function fetchData() {
   const parametrs = new URLSearchParams({
     api_key: `${refs.API_KEY}`,
     page: 1,
