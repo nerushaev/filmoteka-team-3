@@ -152,18 +152,18 @@
 
     @include mq(mobile-only) {
         min-width: 280px;
-        height: 402px;
+        height: auto;
     }
 
     @include mq(tablet-only) {
-        width: auto;
-        height: 455px;
+        width: 336px;
+        height: auto;
         margin-bottom: 8px;
     }
 
     @include mq(desktop) {
-        width: auto;
-        height: 574px;
+        width: 395px;
+        height: auto;
         margin-bottom: 12px;
     }
 }
