@@ -6,6 +6,7 @@ const refs = {
 
   backdropEl: document.querySelector('.js-backdrop'),
   modalInfoEL: document.querySelector('.js-modal__info'),
+  containerModalInfo: document.querySelector('.js-film__container--info'),
   closeBtnModalInfo: document.querySelector('.js-btn__info--close'),
   watchedBtnModalInfo: document.querySelector('.js-btn__info--watched'),
   queueBtnModalInfo: document.querySelector('.js-btn__info--queue'),
