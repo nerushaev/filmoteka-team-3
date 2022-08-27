@@ -10,7 +10,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: initial;
-    transition: opacity 250ms linear, visibility 250ms linear;
+    transition: opacity $Duration linear, visibility $Duration linear;
 }
 .backdrop__is-hidden {
     opacity: 0;
