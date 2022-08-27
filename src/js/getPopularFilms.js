@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { refs } from './refs'
+import { refs } from './refs';
+import {enableLoader, disableLoader} from './loader.js';
 
 export async function fetchData() {
   const parametrs = new URLSearchParams({
@@ -18,11 +19,14 @@ export async function fetchData() {
 window.addEventListener("DOMContentLoaded", loadHomePage);
 
 async function loadHomePage() {
+  enableLoader();
   try {
     const response = await fetchData();    
     renderMarkupPopularFilms(response.results);
+    disableLoader();
   } catch (err) {
     console.log(err);
+    disableLoader();
   } 
 
 }
