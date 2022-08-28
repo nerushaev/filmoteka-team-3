@@ -1,5 +1,6 @@
 import './js/refs.js';
 import './js/getPopularFilms.js';
+import './js/loadHomePage';
 import './js/loader.js';
 
 
