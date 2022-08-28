@@ -2,7 +2,7 @@ import axios from 'axios';
 import { refs } from './refs';
 import { enableLoader, disableLoader } from './loader.js';
 import load from './storage';
-STROAGE_KEY = 'genres_key';
+const STORAGE_KEY = 'genres_key';
 
 export async function fetchData() {
   const parametrs = new URLSearchParams({
@@ -65,7 +65,7 @@ function renderMarkupPopularFilms(data) {
 
 
 function renderMarkupGenres(idFilmGenre) {
-  const genresList = localStorage.getItem(STROAGE_KEY);
+  const genresList = localStorage.getItem(STORAGE_KEY);
   const genresListFind = JSON.parse(genresList).genresData;
 
   console.log(idFilmGenre);
