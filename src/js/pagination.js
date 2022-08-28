@@ -1,4 +1,4 @@
-import { fetchData } from './getPopularFilms';
+/*import { fetchData } from './getPopularFilms';
 
 const pagList = document.querySelector(".pagination-list");
 
@@ -67,4 +67,4 @@ async function createPagination(totalPages, page) {
  pagList.innerHTML = liTag; 
   return liTag; 
 }
-//  createPagination(20, 5)
+//  createPagination(20, 5)*/
