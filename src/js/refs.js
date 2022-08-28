@@ -4,6 +4,8 @@ const refs = {
   GENRES_URL: 'https://api.themoviedb.org/3/genre/movie/list',
   SEARCH_URL: 'https://api.themoviedb.org/3/search/movie',
 
+  STORAGE_KEY: 'genres_key',
+
   gallerySetEL: document.querySelector('.js-gallery__set'),
   backdropEl: document.querySelector('.js-backdrop'),
   modalInfoEL: document.querySelector('.js-modal__info'),
@@ -11,7 +13,7 @@ const refs = {
   closeBtnModalInfo: document.querySelector('.js-btn__info--close'),
   watchedBtnModalInfo: document.querySelector('.js-btn__info--watched'),
   queueBtnModalInfo: document.querySelector('.js-btn__info--queue'),
-
+  homePageGallery : document.querySelector(".gallery__set"),
 
   IMG_URL: 'https://image.tmdb.org/t/p/w500'
 };
