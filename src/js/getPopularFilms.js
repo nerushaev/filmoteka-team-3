@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { refs } from './refs';
-import {enableLoader, disableLoader} from './loader.js';
+import { enableLoader, disableLoader } from './loader.js';
+import load from './storage';
+STROAGE_KEY = 'genres_key';
 
 export async function fetchData() {
   const parametrs = new URLSearchParams({
@@ -40,7 +42,8 @@ function renderMarkupPopularFilms(data) {
         genre_ids,
         release_date,
         title,
-      }) => {
+    }) => {
+     renderMarkupGenres(genre_ids);
       return `<li class="gallery__item">
                 <a  class="gallery__item__link" target="_blank" rel="noopener noreferrer">
                     <img src="${refs.IMG_URL}${poster_path}" alt="${title}" class="gallery__item__img">
@@ -57,4 +60,24 @@ function renderMarkupPopularFilms(data) {
       }).join('');
 
   homePageGallery.insertAdjacentHTML('beforeend', markup);
+    
 }
+
+
+function renderMarkupGenres(idFilmGenre) {
+  const genresList = localStorage.getItem(STROAGE_KEY);
+  const genresListFind = JSON.parse(genresList).genresData;
+
+  console.log(idFilmGenre);
+
+  const numberGenres = idFilmGenre.length;
+  
+  const ganres = idFilmGenre.map((element) =>
+    (genresListFind.find(genre => genre.id == element)).name).join(', ')
+  console.log(ganres);
+
+  return (ganres);   
+
+  }
+
+  
