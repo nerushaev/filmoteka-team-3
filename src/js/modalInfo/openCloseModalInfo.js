@@ -1,4 +1,4 @@
-import { refs } from './refs';
+import { refs } from '../refs';
 import { generateMarkupModalInfo } from './infoForModalMarkup';
 
 const DELAY = 250;
