@@ -14,19 +14,20 @@ export async function getMovie(currentPage) {
     page:`${currentPage}`,
   });
   try {
-    if (!parametrs.query) {
-      userSearch.formNotificationErr.classList.remove('hidden');
-      disableLoader();
-    } else {
-      if (!userSearch.formNotificationErr.classList.contains('hidden')) {
-        userSearch.formNotificationErr.classList.add('hidden');
-      }
+    // if (!parametrs.query) {
+    //   userSearch.formNotificationErr.classList.remove('hidden');
+    //   disableLoader();
+    //   return;
+    // } else {
+    //   if (!userSearch.formNotificationErr.classList.contains('hidden')) {
+    //     userSearch.formNotificationErr.classList.add('hidden');
+    //     return;
+    //   }
 
       const response = await axios.get(`${refs.SEARCH_URL}?${parametrs}`);
       return response.data;
       console.log(response);
-    }
-    }
+  }
     catch (err) {
       console.log(err);
   }
