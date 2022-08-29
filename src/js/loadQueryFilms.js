@@ -4,6 +4,7 @@ import { refs, userSearch } from './refs';
 import { renderMarkupPopularFilms } from "./renderMarkupPopularFilms";
 
 userSearch.searchButton.addEventListener('click', loadQueryFilms);
+userSearch.userSearchInputRef.addEventListener('keypress', onEnterKeyPress)
 
 async function loadQueryFilms() {
   enableLoader();
@@ -17,4 +18,12 @@ async function loadQueryFilms() {
   catch (err) {
     console.log(err);
   }
+}
+
+function onEnterKeyPress(event) {
+  if (event.code === 'Enter') {
+  event.preventDefault();
+      loadQueryFilms();
+  }
+  return;
 }
