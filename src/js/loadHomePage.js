@@ -60,6 +60,7 @@ async function getOtherPopular(currentPage) {
   try {
     const response = await fetchData(currentPage);
     const data = response.results;
+    storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
     console.log(data);
 
     clearPreviousResults();
