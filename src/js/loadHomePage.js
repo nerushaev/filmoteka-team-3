@@ -49,7 +49,7 @@ export async function loadHomePage(e) {
 
   } 
 }
-function clearPreviousResults() {
+export function clearPreviousResults() {
   if ( refs.gallerySetEL.hasChildNodes() === true) {
      refs.gallerySetEL.innerHTML = '';
   }
