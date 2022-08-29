@@ -37,13 +37,13 @@ export function generateMarkupModalInfo({
         ${ overview ? `<p class="film-delineation--title">About</p>
         <p class="film-delineation">${overview}</p>` : ''}
         <div class="film-description--btns">
-          <button
+          <button id="btn__info--watched"
             class="film-description--btn js-btn__info--watched"
             type="button"
           >
             add to Watched
           </button>
-          <button
+          <button id="btn__info--queue"
             class="film-description--btn js-btn__info--queue"
             type="button"
           >
