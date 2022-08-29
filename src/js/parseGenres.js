@@ -7,7 +7,7 @@ export function renderMarkupGenres(idFilmGenre) {
 // console.log("genresListFind",genresListFind);
   // console.log(idFilmGenre);
 
-  const numberGenres = idFilmGenre.length;
+  // const numberGenres = idFilmGenre.length;
   
   const ganres = idFilmGenre.map((element) =>
     (genresListFind.find(genre => genre.id == element)).name).join(', ')
@@ -18,9 +18,9 @@ export function renderMarkupGenres(idFilmGenre) {
   const numberGenres = idFilmGenre.length;
 
 
-  const ganres = idFilmGenre
-    .map(element => genresListFind.find(genre => genre.id === element).name)
-    .join(', ');
+  // const ganres = idFilmGenre
+  //   .map(element => genresListFind.find(genre => genre.id === element).name)
+  //   .join(', ');
   // console.log(ganres);
 
   return ganres;
