@@ -15,7 +15,7 @@ async function loadQueryFilms() {
   enableLoader();
   try {
     const response = await getMovie();
-    storage.save(refs.LS_KEY_QUERY_MOVIE, response.results);
+    storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
     console.log(response);
 
     if (response.total_results <= 0) {
@@ -57,7 +57,7 @@ async function onSearchPagination(currentPage) {
   const response = await getMovie(currentPage);
   const data = response.results;
 
-  storage.save(refs.LS_KEY_QUERY_MOVIE, response.results);
+  storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
   console.log(data);
 
     clearPreviousResults();
@@ -97,5 +97,4 @@ function onEnterKeyPress(event) {
   event.preventDefault();
       loadQueryFilms();
   }
-  return;
 }
