@@ -6,6 +6,7 @@ const refs = {
 
   STORAGE_KEY: 'genres_key',
   LS_KEY_POPULAR_MOVIE: 'popular_movie_key',
+  LS_KEY_QUERY_MOVIE: 'query_movie_key',
 
   gallerySetEL: document.querySelector('.js-gallery__set'),
   backdropEl: document.querySelector('.js-backdrop'),
@@ -22,6 +23,7 @@ const refs = {
 const userSearch = {
   userSearchInputRef: document.querySelector('.header__input'),
   searchButton: document.querySelector('.form-icon'),
+  formNotificationErr: document.querySelector('.form-notification'),
 };
 
 export { refs, userSearch };
