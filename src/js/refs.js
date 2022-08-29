@@ -5,6 +5,7 @@ const refs = {
   SEARCH_URL: 'https://api.themoviedb.org/3/search/movie',
 
   STORAGE_KEY: 'genres_key',
+  LS_KEY_POPULAR_MOVIE: 'popular_movie_key',
 
   gallerySetEL: document.querySelector('.js-gallery__set'),
   backdropEl: document.querySelector('.js-backdrop'),
@@ -13,16 +14,14 @@ const refs = {
   closeBtnModalInfo: document.querySelector('.js-btn__info--close'),
   watchedBtnModalInfo: document.querySelector('.js-btn__info--watched'),
   queueBtnModalInfo: document.querySelector('.js-btn__info--queue'),
-  homePageGallery : document.querySelector(".gallery__set"),
+  homePageGallery: document.querySelector('.gallery__set'),
 
-  IMG_URL: 'https://image.tmdb.org/t/p/w500'
+  IMG_URL: 'https://image.tmdb.org/t/p/w500',
 };
-
-
 
 const userSearch = {
   userSearchInputRef: document.querySelector('.header__input'),
-  searchButton: document.querySelector('.form-icon')
+  searchButton: document.querySelector('.form-icon'),
 };
 
 export { refs, userSearch };

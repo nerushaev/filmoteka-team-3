@@ -1,18 +1,26 @@
-import { fetchData } from './getPopularFilms';  
+import { refs } from './refs';
+import { fetchData } from './getPopularFilms';
 import { enableLoader, disableLoader } from './loader.js';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
+
 import { createPagination, up } from './pagination';
 import { refs, userSearch } from './refs'
+import { getGenresList } from './getGenresList';
+import storage from './storage';
 
 //----измененный код для работы с пагинацией, ниже закоменченный оригинал----
-
-
-window.addEventListener("DOMContentLoaded", loadHomePage);
+window.addEventListener('DOMContentLoaded', loadHomePage);
 
 export async function loadHomePage(e) {
   enableLoader();
+
   try {
-    const response = await fetchData();    
+    //   Записываем в localStorage список жанров
+    getGenresList();
+
+    const response = await fetchData();
+    storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
+
     renderMarkupPopularFilms(response.results);
     disableLoader();
 
@@ -37,6 +45,8 @@ export async function loadHomePage(e) {
   } catch (err) {
     console.log(err);
     disableLoader();
+
+
   } 
 }
 function clearPreviousResults() {
@@ -77,3 +87,7 @@ async function getOtherPopular(currentPage) {
 //   } 
 
 // }
+
+  }
+}
+

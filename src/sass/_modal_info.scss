@@ -54,17 +54,21 @@
     right: 8px;
     width: 30px;
     height: 30px;
-
-    // background-color: transparent;
-    background-color: #FF6B01;
+    
+    border-radius: 5px;
+    background-color: transparent;
     cursor: pointer;
+    fill: #000000;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover{
+        background-color: #FF6B01;
+        border-color: #FF6B01;
+        fill: #ffffff;
+    }
 }
 
-.modal-btn--svg{
-    fill: #000000;
-}
 .film-screen{
-    background-image: url('./image/default-placeholder-image.jpg');
+    background-image: url('../images/default-placeholder-image.jpg');
     width: 240px;
     height: 357px;
     margin-bottom: 20px;

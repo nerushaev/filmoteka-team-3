@@ -1,8 +1,10 @@
+
 import { fetchData } from './getPopularFilms';
 import Pagination from 'tui-pagination';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
 // import 'tui-pagination/dist/tui-pagination.min.css';
 import { loadHomePage } from './loadHomePage';
+/*import { fetchData } from './getPopularFilms';
 
 
 // =======ПЕРВЫЙ ВАРИАНТ (НЕ СРАБАТЫВАЕТ onclick)============
@@ -183,18 +185,6 @@ export function up() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //=======ТРЕТИЙ ВАРИАНТ (КАСТОМНЫЙ)=======
 // async function getData() {
 //   const response = await fetchData()
@@ -255,5 +245,4 @@ export function up() {
 
 
 
-
-
+//  createPagination(20, 5)*/
