@@ -9,10 +9,10 @@ import './js/getGenresList.js';
 import './js/getMovie.js';
 
 import './js/getGenresList.js';
-import './js/pagination.js';
+//import './js/pagination.js';
 
 import './js/modalInfo/appModalInfo'; //  JS for open or close modal for information about the movie 
 
 import './js/modal';
-
-import './js/loadQueryFilms.js'
+import './js/modalInfo/btnModalLibrary';
+import './js/loadQueryFilms.js';
