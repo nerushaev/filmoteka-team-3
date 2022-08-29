@@ -6,26 +6,30 @@
 
     @include mq(mobile-only) {
         background-image: url(../images/header_home_page/header_sm.png);
+
+        @include mq(retina) {
+                background-image: url(../images/header_home_page/header_sm@2x.png);
+            }
            
     }
-    @include mq(retina){
-        background-image: url(../images/header_home_page/header_sm@2x.png);           
-    }
+    
 
     @include mq(tablet-only){
         background-image: url(../images/header_home_page/header_md.png);
-    }
-    @include mq(retina){
-        background-image: url(../images/header_home_page/header_md@2x.png);
+
+        @include mq(retina) {
+                background-image: url(../images/header_home_page/header_md@2x.png);
+            }
     }
 
     @include mq(desktop){
         background-image: url(..//images/header_home_page/header_lg.png);
-    }
-    @include mq(retina){
-        background-image: url(../images/header_home_page/header_lg@2x.png);
-    }
 
+        @include mq(retina) {
+                background-image: url(../images/header_home_page/header_lg@2x.png);
+            }
+    }
+    
 }
 
 .header__container{

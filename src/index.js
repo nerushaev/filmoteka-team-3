@@ -8,8 +8,6 @@ import './js/getGenres.js';
 import './js/getGenresList.js';
 import './js/getMovie.js';
 
-// import './js/pagination';
-
 import './js/getGenresList.js';
 import './js/pagination';
 
