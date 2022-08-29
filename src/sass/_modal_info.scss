@@ -203,3 +203,8 @@ justify-content: space-between;
         margin-left: 18px;
             }       
 }
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
