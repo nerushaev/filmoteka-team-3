@@ -3,7 +3,7 @@ import { fetchData } from './getPopularFilms';
 import { enableLoader, disableLoader } from './loader.js';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
 
-import { createPagination, up } from './pagination';
+// import { createPagination, up } from './pagination';
 import { refs, userSearch } from './refs'
 import { getGenresList } from './getGenresList';
 import storage from './storage';
