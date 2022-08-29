@@ -4,7 +4,6 @@ import './js/loadHomePage';
 import './js/loader.js';
 
 
-import './js/getGenres.js';
 import './js/getGenresList.js';
 import './js/getMovie.js';
 
