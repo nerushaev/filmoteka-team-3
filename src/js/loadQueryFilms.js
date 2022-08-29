@@ -57,7 +57,7 @@ async function onSearchPagination(currentPage) {
   const response = await getMovie(currentPage);
   const data = response.results;
 
-  storage.save(refs.LS_KEY_QUERY_MOVIE, response.results);
+  storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
   console.log(data);
 
     clearPreviousResults();
