@@ -2,7 +2,6 @@ import { refs } from '../refs';
 import storage from '../storage';
 import { generateMarkupModalInfo } from './markupModalInfo';
  
-const loadPopMovies = storage.load(refs.LS_KEY_POPULAR_MOVIE);
 const DELAY = 250;
 
 // Слушатели
@@ -12,11 +11,11 @@ refs.backdropEl.addEventListener('click', onBackdropClick);
 
 // Ф-ция открывает модальное окно с инфармацией о выбраном фильме, при нажатии на иконку с фильмом
 // (нужно на карточу с фильмом - ! не выходит поймать evt на LI, что бы взять id с LI, а не IMG!)
-function onOpenModalInfo(evt) {
+async function onOpenModalInfo(evt) {
     if (evt.target.nodeName !== 'IMG') {
         return;
     }
-
+    const loadPopMovies = await storage.load(refs.LS_KEY_POPULAR_MOVIE);
     let idMovie = Number(evt.target.dataset.id);
     const selectedMovie = loadPopMovies.find(loadMovie => loadMovie.id === idMovie);
     appendInfoForModalMarkup(selectedMovie);
