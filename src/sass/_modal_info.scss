@@ -66,24 +66,36 @@
         fill: #ffffff;
     }
 }
-
-.film-screen{
-    background-image: url('../images/default-placeholder-image.jpg');
+.tumb__screen {
     width: 240px;
     height: 357px;
     margin-bottom: 20px;
+
     border-radius: 5px;
+
+    overflow: hidden;
+    background-image: url('../images/default-placeholder-image.jpg');
     background-size: cover;
     background-position: 50% 50%;
-    @include mq(tablet){
-    width: 264px;
-    height: 374px;
-        }
-    @include mq(desktop){
-    width: 375px;
-    height: 478px;
-        }
+
+    @include mq(tablet) {
+        width: 264px;
+        height: 374px;
+        margin-bottom: 0;
     }
+
+    @include mq(desktop) {
+        width: 375px;
+        height: 478px;
+    }
+}
+
+.film-screen{    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .film-container--descr{
     @include mq(tablet){
         width: 264px;
@@ -182,13 +194,4 @@ justify-content: space-between;
         width: 136px;
         margin-left: 18px;
             }       
-}
-
-// Test open modal info
-.one__card {
-    display: inline-block;
-    padding: 15px 20px;
-    color: #fff;
-    background-color:darkblue;
-    border-radius: 22px;
 }
