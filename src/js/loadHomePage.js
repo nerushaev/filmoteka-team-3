@@ -88,6 +88,5 @@ async function getOtherPopular(currentPage) {
 
 // }
 
-  }
-}
+
 
