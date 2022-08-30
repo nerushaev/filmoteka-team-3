@@ -12,19 +12,22 @@ userSearch.userSearchInputRef.addEventListener('keypress', onEnterKeyPress)
 console.log(userSearch.formNotificationErr);
 
 async function loadQueryFilms() {
+  // Включаем лоадер
   enableLoader();
   try {
+        // Выполняем запрос по введенной информации
     const response = await getMovie();
-    storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
-    console.log(response);
-
     if (response.total_results <= 0) {
       userSearch.formNotificationErr.classList.remove('hidden');
       disableLoader();
+      return;
     } else {
       if (!userSearch.formNotificationErr.classList.contains('hidden')) {
         userSearch.formNotificationErr.classList.add('hidden');
       }
+    // Сохраняем полученую информацию в локал сторедж
+    storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
+    console.log(response);
       
     refs.homePageGallery.innerHTML = "";
     renderMarkupPopularFilms(response.results);
