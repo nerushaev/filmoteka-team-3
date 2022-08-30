@@ -27,5 +27,4 @@ function addToWatchedList(){
     let arrayId = arrFilms.find(obj => obj.id === filmIdWatched)
     let a = arrIdWatched.push(arrayId)
     localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
-
 }
