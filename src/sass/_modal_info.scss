@@ -142,6 +142,8 @@
     padding: 0;
     word-wrap: break-word;
 }
+
+
 .description-vote{
 color:#ffffff;
 background: #FF6B01;
@@ -155,10 +157,16 @@ margin-left: 3px;
     display: inline-block;
     text-align: center;
     padding: 1px 4px;
-    width: 36px;
+    min-width: 36px;
     border-radius: 5px;
 }
-.title-original-description{
+
+.description-genre,
+.description-title-original {
+    display: inline-flex;
+}
+
+.title-original-description {
 text-transform: uppercase;
 }
 .film-delineation--title{
@@ -171,7 +179,7 @@ margin-bottom: 8px;
 color: #000000;
 margin-bottom: 20px;
 max-height: 240px;
-overflow: auto;
+overflow: scroll;
 }
 
 .film-description--btns{
@@ -208,3 +216,4 @@ justify-content: space-between;
     height: 100%;
     overflow: hidden;
 }
+
