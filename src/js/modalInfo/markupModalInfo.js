@@ -9,10 +9,12 @@ export function generateMarkupModalInfo({
   popularity,
   original_title,
   genre_ids,
+
   overview }) {
   return `<div class="tumb__screen">
       ${poster_path ? `<img class="film-screen" src="${refs.IMG_URL}${poster_path}" alt="${title}" />` : ''}
       </div>
+
       <div class="film-container--descr">
         ${title ? `<h2 class="film-title">${title}</h2>` : original_title}
         <table class="film-description">
@@ -38,19 +40,6 @@ export function generateMarkupModalInfo({
         </table>
         ${ overview ? `<p class="film-delineation--title">About</p>
         <p class="film-delineation">${overview}</p>` : ''}
-        <div class="film-description--btns">
-          <button id="btn__info--watched"
-            class="film-description--btn js-btn__info--watched"
-            type="button"
-          >
-            add to Watched
-          </button>
-          <button id="btn__info--queue"
-            class="film-description--btn js-btn__info--queue"
-            type="button"
-          >
-            add to queue
-          </button>
-        </div>
+        
       </div>`
 };
