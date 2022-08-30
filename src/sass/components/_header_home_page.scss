@@ -162,4 +162,20 @@
     height: 3px;
     background-color: #FF001B;;
 }
-       
+
+@keyframes logo__icon {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logo__icon {
+    animation: logo__icon 1s ease-in infinite alternate;
+
+}
+
+
