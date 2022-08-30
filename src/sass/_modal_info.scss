@@ -174,12 +174,19 @@ text-transform: uppercase;
 text-transform: uppercase;   
 margin-bottom: 8px;
 }
+
 .film-delineation{
-@include text(12px, 500, 1.67, normal); 
-color: #000000;
-margin-bottom: 20px;
-max-height: 240px;
-overflow: scroll;
+    @include text(12px, 500, 1.67, normal); 
+    color: #000000;
+    margin-bottom: 20px;
+    overflow-y: auto;
+
+    @include mq(tablet) {
+        max-height: 164px;
+    }
+    @include mq(desktop) {
+        max-height: 220px;
+    }
 }
 
 .film-description--btns{
@@ -209,7 +216,7 @@ justify-content: space-between;
     @include mq(desktop){
         width: 136px;
         margin-left: 18px;
-            }       
+    }       
 }
 
 .stop-scrolling {
@@ -217,3 +224,11 @@ justify-content: space-between;
     overflow: hidden;
 }
 
+.modal-info__container {
+    height: 100%;
+
+    @include mq(mobile-only) {
+        overflow-y: scroll;
+    }
+    
+}
