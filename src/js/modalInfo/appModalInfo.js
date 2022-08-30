@@ -6,7 +6,10 @@ const DELAY = 250;
 
 // Слушатели
 refs.gallerySetEL.addEventListener('click', onOpenModalInfo);
-refs.galleryContainerLibrary.addEventListener('click', onOpenModalInfo)
+const galleryContainer = refs.galleryContainerLibrary;
+if (galleryContainer) {
+    galleryContainer.addEventListener('click', onOpenModalInfo)
+}
 refs.closeBtnModalInfo.addEventListener('click', onCloseModalInfo);
 refs.backdropEl.addEventListener('click', onBackdropClick);
 
