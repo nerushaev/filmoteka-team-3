@@ -28,11 +28,11 @@ export function generateMarkupModalInfo({
             <td>${popularity.toFixed(1)}</td>` : ''}
           </tr>
           <tr>
-            ${original_title ? `<th class="title-description">Original Title</th>
+            ${original_title ? `<th class="title-description description-title-original">Original Title</th>
             <td class="title-original-description">${original_title}</td>` : ''}
           </tr>
           <tr>
-            ${!genre_ids || genre_ids.length === 0 ? '' : `<th class="title-description">Genre</th>
+            ${!genre_ids || genre_ids.length === 0 ? '' : `<th class="title-description description-genre">Genre</th>
             <td>${renderMarkupGenres(genre_ids)}</td>`}
           </tr>
         </table>
