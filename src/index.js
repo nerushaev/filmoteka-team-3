@@ -13,5 +13,5 @@ import './js/pagination.js';
 import './js/modalInfo/appModalInfo'; //  JS for open or close modal for information about the movie 
 
 import './js/modal';
-// import './js/modalInfo/btnModalLibrary';
+import './js/modalInfo/btnModalLibrary';
 import './js/loadQueryFilms.js';
