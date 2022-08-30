@@ -2,8 +2,10 @@ import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
 
+
 refs.watchedBtnLibrary.addEventListener('click', onWatchedLibrary);
 refs.queueBtnLibrary.addEventListener('click', onQueueLibrary);
+
 
 async function onWatchedLibrary(evt) {
     evt.preventDefault();

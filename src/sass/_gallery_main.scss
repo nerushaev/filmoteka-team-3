@@ -38,7 +38,7 @@
 
 .gallery__item {
     opacity: 1;
-    background-color: #fff;
+    // background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out;
@@ -69,7 +69,7 @@
 .gallery__item__text {
     padding-top: 10px;
     opacity: 1;
-    background-color: #fff;
+    // background-color: #fff;
 
     @include mq(tablet-only) {
         padding-top: 8px;
