@@ -23,19 +23,27 @@
     top: 20px;
     transform: translateX(-50%);
     width: 280px;
-    max-height: 940px;
     padding: 48px 20px 40px 20px;
+
     background-color: #ffffff;
-    @include mq(tablet){
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 704px;
-    padding: 40px 72px 40px 40px;
+
+    @include mq(mobile-only) {
+        height: 90%;
+        overflow-y: scroll;
     }
+
+    @include mq(tablet){
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 704px;
+        max-height: 558px;
+        padding: 40px 72px 40px 40px;
+    }
+
     @include mq(desktop){
         width: 806px;
         padding: 40px 12px 40px 12px;
-        }
+    }
 }
 .film-container--info{
     display: flex;
@@ -194,4 +202,9 @@ justify-content: space-between;
         width: 136px;
         margin-left: 18px;
             }       
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
