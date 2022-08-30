@@ -3,7 +3,6 @@ import { renderMarkupGenres } from '../parseGenres';
 
 const btnQueueLibrary = document.querySelector('#btn__info--queue');
 const btnWatchedLibrary = document.querySelector('#btn__info--watched');
-const cont = document.querySelector('.gallery__container')
 btnQueueLibrary.addEventListener('click', addToQueueList)
 btnWatchedLibrary.addEventListener('click', addToWatchedList)
 
