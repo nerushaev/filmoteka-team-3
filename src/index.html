@@ -20,17 +20,21 @@
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <!-- Loader for await request/response -->
-    <include src="./partials/loader.html"></include>
-    <!-- Section Header  -->
-    <include src="./partials/header_home_page.html"></include>
-    <!-- Popular Gallery (Hero Gallery) -->
-    <include src="./partials/gallery_main.html"></include>
-    <include src="./partials/pagination.html"></include>
-    <!-- Modal for information about the movie -->
-    <include src="./partials/modal_info.html"></include>
-    <!-- Footer Section  -->
-    <include src="./partials/footer.html"></include>
+    <div class="body-wrapper">
+      <!-- Loader for await request/response -->
+      <include src="./partials/loader.html"></include>
+      <!-- Section Header  -->
+      <include src="./partials/header_home_page.html"></include>
+      <main>
+        <!-- Popular Gallery (Hero Gallery) -->
+        <include src="./partials/gallery_main.html"></include>
+        <include src="./partials/pagination.html"></include>
+        <!-- Modal for information about the movie -->
+        <include src="./partials/modal_info.html"></include>
+      </main>
+      <!-- Footer Section  -->
+      <include src="./partials/footer.html"></include>
+    </div>
 
     <!-- Script indexJs -->
     <script type="module" src="./index.js"></script>
