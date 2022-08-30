@@ -1,10 +1,9 @@
-import { refs } from './refs';
 import { fetchData } from './getPopularFilms';
 import { enableLoader, disableLoader } from './loader.js';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
 
 import { createPagination, up } from './pagination';
-import { refs, userSearch } from './refs'
+import { refs, userSearch } from './refs';
 import { getGenresList } from './getGenresList';
 import storage from './storage';
 
@@ -31,7 +30,7 @@ export async function loadHomePage(e) {
     const pagination = createPagination();
     pagination.setItemsPerPage(20);
     // pagination.setTotalItems(totalResult);
-    pagination.reset(totalResult)
+    pagination.reset(totalResult);
     pagination.movePageTo(currentPage);
 
     pagination.on('afterMove', e => {
@@ -40,18 +39,15 @@ export async function loadHomePage(e) {
       window.scrollTo({ top: 240, behavior: 'smooth' });
       getOtherPopular(currentPage);
       // up();
-    })
-
+    });
   } catch (err) {
     console.log(err);
     disableLoader();
-
-
-  } 
+  }
 }
-function clearPreviousResults() {
-  if ( refs.gallerySetEL.hasChildNodes() === true) {
-     refs.gallerySetEL.innerHTML = '';
+export function clearPreviousResults() {
+  if (refs.gallerySetEL.hasChildNodes() === true) {
+    refs.gallerySetEL.innerHTML = '';
   }
   return;
 }
@@ -71,7 +67,6 @@ async function getOtherPopular(currentPage) {
   }
 }
 
-
 //---изначальный код----
 
 // window.addEventListener("DOMContentLoaded", loadHomePage);
@@ -79,15 +74,12 @@ async function getOtherPopular(currentPage) {
 // export async function loadHomePage() {
 //   enableLoader();
 //   try {
-//     const response = await fetchData();    
+//     const response = await fetchData();
 //     renderMarkupPopularFilms(response.results);
 //     disableLoader();
 //   } catch (err) {
 //     console.log(err);
 //     disableLoader();
-//   } 
+//   }
 
 // }
-
-
-

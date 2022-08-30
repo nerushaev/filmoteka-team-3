@@ -20,6 +20,7 @@ async function onOpenModalInfo(evt) {
     const selectedMovie = loadPopMovies.find(loadMovie => loadMovie.id === idMovie);
     appendInfoForModalMarkup(selectedMovie);
 
+    document.body.classList.add('stop-scrolling');
     window.addEventListener('keydown', onEscKeyPress);
     refs.backdropEl.classList.remove('backdrop__is-hidden');
 }
@@ -28,6 +29,7 @@ async function onOpenModalInfo(evt) {
 function onCloseModalInfo() {
     window.removeEventListener('keydown', onEscKeyPress);
     refs.backdropEl.classList.add('backdrop__is-hidden');
+    document.body.classList.remove('stop-scrolling');
     clearInfoForModalMarkup();
 }
 // Ф-ция закрывает модальное окно с инфармацией о фильме, при нажатии вне модалки (на бэкдроп)
