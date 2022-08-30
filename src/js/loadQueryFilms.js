@@ -49,7 +49,8 @@ async function loadQueryFilms() {
   }
  catch (err) {
     console.log(err);
-
+    disableLoader();
+    userSearch.formNotificationErr.classList.remove('hidden');
   } 
 }
 
