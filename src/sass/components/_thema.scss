@@ -85,11 +85,10 @@
 
 body.light-theme {
     background-color: rgb(255, 255, 255);
-    // background-image: url(../images/fon.jpg);
+   
 }
 
 body.dark-theme {
-    // background-color: rgb(51, 51, 51);
     background-image: url(../images/night-sky.jpg);
 
     & .footer {
@@ -111,50 +110,13 @@ body.dark-theme {
     & .tui-pagination .tui-page-btn {
         color: #ffffff;
     }
-    & .tui-ico-ellip {
-        fill: #ffffff;
+
+    & .modal-wrapper,
+    & .modal-icon {
+        background-color: #d7d7d7;
     }
 
-    & .tui-pagination .tui-ico-first,
-    .tui-pagination .tui-ico-last {
-        fill: #ffffff;
-    }
-
-    & .tui-pagination .hide-first,
-    .tui-pagination .hide-last {
-        background: rgba(247, 247, 247, 0.1);
-    }
-
-    & .tui-pagination .hide-first:hover,
-    & .tui-pagination .hide-last:hover {
-        background: var(--brand-orange-color);
-    }
-
-    & .popular-btn,
-    & .top-rated-btn,
-    & .upcoming-btn,
-    & .trending-tv-btn {
-        color: var(--primary-white-color);
-    }
-
-    & .spinner {
-        // background: url(../images/nebo.jpg);
-        background: transparent;
-    }
-
-    & .page-header,
-    & .page-lib {
-        box-shadow: -1px 7px 33px 6px rgba(211, 211, 211, 0.1);
-    }
-
-    & .modal-window,
-    & .modal-icon,
-    & .basicLightbox__placeholder,
-    & .modal-window__close-btn {
-        background-color: #c0c0c0;
-    }
-
-    & .modal-window__table-refs {
-        color: #696969;
+    & .title-description {
+        color: #bf793e;
     }
 }
