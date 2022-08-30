@@ -8,15 +8,15 @@ export function generateMarkupModalInfo({
   vote_count,
   popularity,
   original_title,
-  genre_ids,
+  genre_ids, id,
 
   overview }) {
   return `<div class="tumb__screen">
-      ${poster_path ? `<img class="film-screen" src="${refs.IMG_URL}${poster_path}" alt="${title}" />` : ''}
+      ${poster_path ? `<img id="${id}" class="film-screen" src="${refs.IMG_URL}${poster_path}" alt="${title}" />` : ''}
       </div>
 
       <div class="film-container--descr">
-        ${title ? `<h2 class="film-title">${title}</h2>` : original_title}
+        ${title ? `<h2  class="film-title">${title}</h2>` : original_title}
         <table class="film-description">
           <tr>
             ${!vote_average && !vote_count ? '' :  `<th class="title-description">Vote / Votes</th>
