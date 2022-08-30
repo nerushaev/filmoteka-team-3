@@ -1,10 +1,43 @@
 import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
+// import notify from 
 
 
 refs.watchedBtnLibrary.addEventListener('click', onWatchedLibrary);
 refs.queueBtnLibrary.addEventListener('click', onQueueLibrary);
+
+let watchedLength = 0;
+let queueLength = 0;
+
+libraryStart();
+
+function libraryStart() {
+  try {
+   watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
+  } catch (error) {
+   watchedLength = 0;
+  };
+
+  try {
+   queueLength = (storage.load(refs.LS_KEY_QUERY_MOVIE)).length;
+  } catch (error) {
+   queueLength = 0;
+  };
+
+  if (watchedLength === 0 && queueLength === 0) {
+    refs.galleryMessage.classList.remove('hidden');
+  } else if (watchedLength != 0) {
+    refs.galleryMessage.classList.add('hidden');
+    
+    // refs.watchedBtnLibrary.classList.add('btn__is-active');
+    // refs.queueBtnLibrary.classList.remove('btn__is-active');
+    refs.galleryContainerLibrary.innerHTML = '';
+    const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
+    renderMarkupLibrary(data);
+  }
+
+}
 
 
 async function onWatchedLibrary(evt) {
@@ -12,26 +45,36 @@ async function onWatchedLibrary(evt) {
     refs.watchedBtnLibrary.classList.add('btn__is-active');
     refs.queueBtnLibrary.classList.remove('btn__is-active');
 
-    console.log(refs.galleryContainerLibrary);
-
+   // console.log(refs.galleryContainerLibrary);
+    refs.galleryContainerLibrary.innerHTML = '';
 
     const data = await storage.load(refs.LS_KEY_WATCH_MOVIE);
-    console.log(data);
-    renderMarkupLibrary(data);
+    if (!data) {
+      refs.galleryMessage.classList.remove('hidden');
+      return;
+    }
+  renderMarkupLibrary(data);
+      refs.galleryMessage.classList.add('hidden');
 }
 
 async function onQueueLibrary(evt) {
    evt.preventDefault();
     refs.queueBtnLibrary.classList.add('btn__is-active');
     refs.watchedBtnLibrary.classList.remove('btn__is-active');
- 
+
+    refs.galleryContainerLibrary.innerHTML = '';
     const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
-    console.log(data);
-    renderMarkupLibrary(data);
+    if (!data) {
+      refs.galleryMessage.classList.remove('hidden');
+      return;
+    }
+   // console.log(data);
+  renderMarkupLibrary(data);
+      refs.galleryMessage.classList.add('hidden');
 }
 
 function renderMarkupLibrary(data) {
-    console.log('data', data);
+   // console.log('data', data);
   const markup = data
     .map(({ id, poster_path, genre_ids, release_date, title, vote_average }) => {
       return `<li class="gallery__item">
@@ -66,8 +109,6 @@ function renderMarkupLibrary(data) {
             </li>`;
     })
     .join('');
-
-    console.log(markup);
+  
     refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
-       // ('beforeend', markup);
 }
