@@ -5,7 +5,7 @@ import storage from './storage';
 refs.watchedBtnLibrary.addEventListener('click', onWatchedLibrary);
 refs.queueBtnLibrary.addEventListener('click', onQueueLibrary);
 
-function onWatchedLibrary(evt) {
+async function onWatchedLibrary(evt) {
     evt.preventDefault();
     refs.watchedBtnLibrary.classList.add('btn__is-active');
     refs.queueBtnLibrary.classList.remove('btn__is-active');
@@ -13,18 +13,17 @@ function onWatchedLibrary(evt) {
     console.log(refs.galleryContainerLibrary);
 
 
-    const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
+    const data = await storage.load(refs.LS_KEY_WATCH_MOVIE);
     console.log(data);
     renderMarkupLibrary(data);
-
 }
 
-function onQueueLibrary(evt) {
+async function onQueueLibrary(evt) {
    evt.preventDefault();
     refs.queueBtnLibrary.classList.add('btn__is-active');
     refs.watchedBtnLibrary.classList.remove('btn__is-active');
  
-    const data = storage.load(refs.LS_KEY_QUERY_MOVIE);
+    const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
     console.log(data);
     renderMarkupLibrary(data);
 }
@@ -58,7 +57,7 @@ function renderMarkupLibrary(data) {
           ? `| <span class="genre">  ${release_date.slice(0, 4)}</span>`
           : ''
       } </p>    
-       <span class="rating">${vote_average}</span>
+       <span class="rating">${vote_average.toFixed(1)}</span>
                         </div>
                     </div>
                 </a>
@@ -67,6 +66,6 @@ function renderMarkupLibrary(data) {
     .join('');
 
     console.log(markup);
-    refs.galleryContaunerLibrary.insertAdjacentHTML("afterbegin", markup);
+    refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
        // ('beforeend', markup);
 }
