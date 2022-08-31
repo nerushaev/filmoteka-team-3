@@ -34,7 +34,7 @@
     width: 37px;
     padding: 8px 0 6px;
     margin-left: 0;
-    color: #333;
+    color: #000;
     font-size: 12px;
     font-weight: 500;
     line-height: 1;
@@ -51,7 +51,7 @@
 }
 
 .tui-pagination .tui-page-btn:hover {
-    background-color: #ffa565;
+    background-color: #FF6B08;
 }
 
 .tui-pagination .tui-is-selected,
@@ -208,7 +208,7 @@
 }
 
 .tui-page-inputs .tui-page-current {
-    color: #FF6B08
+    color: #FF6B08;
 }
 
 .tui-page-separator {
@@ -230,7 +230,7 @@
 
 .tui-page-btn.tui-next-is-ellip.tui-last-child,
 .tui-page-btn.tui-prev-is-ellip.tui-first-child {
-    background-color: white;
+    background-color: transparent;
     display: none;
 
     @include mq (tablet) {
@@ -238,7 +238,7 @@
             }
     
     &:hover {
-        background-color: #f4f4f4;
+        background-color: #FF6B08;
     }
 }
 

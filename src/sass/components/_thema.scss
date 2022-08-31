@@ -123,4 +123,12 @@ body.dark-theme {
     & .title-description {
         color: #bf793e;
     }
+    & .tui-pagination .tui-first,
+    .tui-pagination .tui-prev,
+    .tui-pagination .tui-next,
+    .tui-pagination .tui-last,
+    .tui-pagination .tui-prev-is-ellip,
+    .tui-pagination .tui-next-is-ellip{
+        background-color: #1a1a1a;
+    }
 }
