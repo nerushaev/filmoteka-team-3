@@ -19,6 +19,7 @@ export async function loadHomePage(e) {
     getGenresList();
 
     const response = await fetchData();
+    console.log(response);
     storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
 
     renderMarkupPopularFilms(response.results);
@@ -29,8 +30,8 @@ export async function loadHomePage(e) {
     console.log(currentPage);
 
     // storage.save(CURRENT_PAGE, currentPage);
-
-    const pagination = createPagination();
+    if (response.total_pages >= 2) {
+  const pagination = createPagination();
     pagination.setItemsPerPage(20);
     pagination.setTotalItems(totalResult);
     pagination.movePageTo(currentPage);
@@ -42,6 +43,8 @@ export async function loadHomePage(e) {
       scrollUp();
 
     });
+}
+    
 
   } catch (err) {
     console.log(err);

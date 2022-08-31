@@ -44,11 +44,14 @@ async function loadQueryFilms() {
     // Сохраняем общее колличество страниц
     let currentPage = response.page;
     console.log(currentPage);
-    
-    const pagination = createPagination();
+      console.log(response.total_pages);
+      
+        const pagination = createPagination();
     pagination.setItemsPerPage(20);
-    pagination.setTotalItems(totalResult);
+    pagination.reset(totalResult);
     pagination.movePageTo(currentPage);
+        
+        console.log(pagination);
       
     pagination.on('afterMove', e => {
       const currentPage = e.page;
@@ -56,8 +59,8 @@ async function loadQueryFilms() {
       onSearchPagination(currentPage)
       scrollUp();
     })
-      
     }
+    
   }
  catch (err) {
     console.log(err);
