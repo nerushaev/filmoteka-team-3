@@ -123,19 +123,20 @@
     border-radius: 5px;
     margin: 0;
 
+    object-fit: cover;
     @include mq(mobile-only) {
-        min-width: 280px;
-        height: auto;
+        min-width: 100%;
+        height: 398px;
     }
 
     @include mq(tablet-only) {
-        width: 336px;
-        height: auto;
+        width: 100%;
+        height: 455px;
     }
 
     @include mq(desktop) {
-        width: 395px;
-        height: auto;
+        width: 100%;
+        height: 574px;
     }
 }
 
