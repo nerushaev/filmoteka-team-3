@@ -15,7 +15,9 @@ libraryStart();
 
 function libraryStart() {
   const pagination = createPagination();
-    console.log(pagination);
+  pagination.setItemsPerPage(20);
+  console.log(pagination);
+  
   try {
    watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
   } catch (error) {
