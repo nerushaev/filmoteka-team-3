@@ -7,7 +7,7 @@ import { createPagination, scrollUp } from './pagination';
 import { clearPreviousResults } from './loadHomePage';
 
 userSearch.searchButton.addEventListener('click', loadQueryFilms);
-userSearch.userSearchInputRef.addEventListener('keypress', onEnterKeyPress)
+userSearch.userSearchInputRef.addEventListener('keydown', onEnterKeyPress)
 
 console.log(userSearch.formNotificationErr);
 
