@@ -35,11 +35,18 @@
 .header__container{
     display: flex;
     padding-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+
+    @include mq(tablet) {
+        margin-bottom: 20px;
+    }
 }
 .header__logo{
     margin-right: auto;
+    transition: 1s;
+        text-align: center;
 }
+
 .header__logo-name{
     font-weight: 500;
     font-size: 30px;
@@ -49,6 +56,14 @@
     @include mq(mobile-only){
         display: none;
     }
+}
+
+.header__logo:hover,
+.header__logo:focus{
+    transform: scale(1.2);
+    .logo__icon {
+            transform: rotate(180deg);
+        }
 }
 .header__nav-page{
     display: flex;
@@ -74,6 +89,12 @@
 .nav__link{
     color: #fff;
         text-transform: uppercase;
+
+    transition: 1s;
+    // text-align: center;
+}
+.nav__link:hover{
+    transform: scale(1.2);
 }
 
 .nav__item:not(:last-child){
@@ -91,6 +112,10 @@
     @include mq(desktop){
         margin-right: 10px;
     }
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    transition-delay: 0;
 }
 
 .header__form{
@@ -128,6 +153,12 @@
         width: 394px;
     }
 }
+
+.header__input:hover,
+.header__input:focus {
+    outline: none;
+    border-bottom: 0.5px solid #ff6b01;
+}
 .header__input::placeholder{
     color: #FFFFFF;
 }
@@ -162,4 +193,20 @@
     height: 3px;
     background-color: #FF001B;;
 }
-       
+
+// @keyframes logo__icon {
+//     from {
+//         opacity: 0;
+//     }
+
+//     to {
+//         opacity: 1;
+//     }
+// }
+
+// .logo__icon {
+//     animation: logo__icon 2s ease-in infinite alternate;
+
+// }
+
+

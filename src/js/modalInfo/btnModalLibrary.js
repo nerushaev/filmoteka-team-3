@@ -32,4 +32,4 @@ return
     arrIdWatched.push(arrayId) 
     localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
 }
-  
+

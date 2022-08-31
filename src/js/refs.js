@@ -17,6 +17,10 @@ const refs = {
   watchedBtnModalInfo: document.querySelector('.js-btn__info--watched'),
   queueBtnModalInfo: document.querySelector('.js-btn__info--queue'),
   homePageGallery: document.querySelector('.gallery__set'),
+  watchedBtnLibrary: document.querySelector('.lib__watched'),
+  queueBtnLibrary: document.querySelector('.lib__queue'),
+  galleryContainerLibrary: document.querySelector('.gallery__library__set'),
+  galleryMessage: document.querySelector('.gallery__items__notfound'),
 
   IMG_URL: 'https://image.tmdb.org/t/p/w500',
 };

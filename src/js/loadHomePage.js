@@ -2,11 +2,12 @@ import { fetchData } from './getPopularFilms';
 import { enableLoader, disableLoader } from './loader.js';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
 
-import { createPagination, up } from './pagination';
+import { createPagination, scrollUp } from './pagination';
 import { refs, userSearch } from './refs';
 import { getGenresList } from './getGenresList';
 import storage from './storage';
-
+ 
+const CURRENT_PAGE = 'current-page';
 //----измененный код для работы с пагинацией, ниже закоменченный оригинал----
 window.addEventListener('DOMContentLoaded', loadHomePage);
 
@@ -27,24 +28,27 @@ export async function loadHomePage(e) {
     let currentPage = response.page;
     console.log(currentPage);
 
+    // storage.save(CURRENT_PAGE, currentPage);
+
     const pagination = createPagination();
     pagination.setItemsPerPage(20);
-    // pagination.setTotalItems(totalResult);
-    pagination.reset(totalResult);
+    pagination.setTotalItems(totalResult);
     pagination.movePageTo(currentPage);
 
     pagination.on('afterMove', e => {
       const currentPage = e.page;
       console.log(currentPage);
-      window.scrollTo({ top: 240, behavior: 'smooth' });
       getOtherPopular(currentPage);
-      // up();
+      scrollUp();
+
     });
+
   } catch (err) {
     console.log(err);
     disableLoader();
   }
 }
+
 export function clearPreviousResults() {
   if (refs.gallerySetEL.hasChildNodes() === true) {
     refs.gallerySetEL.innerHTML = '';
@@ -59,8 +63,9 @@ async function getOtherPopular(currentPage) {
     storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
     console.log(data);
 
-    clearPreviousResults();
+    // storage.save(CURRENT_PAGE, currentPage);
 
+    clearPreviousResults();
     renderMarkupPopularFilms(data);
   } catch (error) {
     console.log(error);

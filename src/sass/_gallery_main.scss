@@ -38,7 +38,7 @@
 
 .gallery__item {
     opacity: 1;
-    background-color: #fff;
+    // background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out;
@@ -69,7 +69,7 @@
 .gallery__item__text {
     padding-top: 10px;
     opacity: 1;
-    background-color: #fff;
+    // background-color: #fff;
 
     @include mq(tablet-only) {
         padding-top: 8px;
@@ -123,18 +123,20 @@
     border-radius: 5px;
     margin: 0;
 
+    object-fit: cover;
     @include mq(mobile-only) {
-        min-width: 280px;
-        height: auto;
+        min-width: 100%;
+        height: 398px;
     }
 
     @include mq(tablet-only) {
-        width: 336px;
-        height: auto;
+        width: 100%;
+        height: 455px;
     }
 
     @include mq(desktop) {
-        width: 395px;
-        height: auto;
+        width: 100%;
+        height: 574px;
     }
 }
+

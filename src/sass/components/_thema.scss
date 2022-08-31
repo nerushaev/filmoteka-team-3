@@ -1,0 +1,126 @@
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0px;
+
+    @include mq(mobile-only){
+        margin-bottom: 10px;
+    }
+}
+
+.theme-switch__icon {
+    color: #ffffff;
+    height: 20px;
+    width: 20px;
+    transition: color 250ms linear;
+}
+
+.icon-sun {
+    margin-right: 7px;
+}
+
+.icon-moon {
+    margin-left: 7px;
+}
+
+.theme-switch__control {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 36px;
+    height: 14px;
+    border-radius: 50em;
+    padding: 3px 0;
+}
+
+.theme-switch__toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+.theme-switch__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    user-select: none;
+    background-color: #818181;
+    border-radius: inherit;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.theme-switch__marker {
+    position: relative;
+    background-color: #ffffff;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transform: translateX(3px);
+    transition: transform 250ms linear;
+}
+
+.theme-switch__toggle:checked+.theme-switch__track {
+    background-color: #333;
+}
+
+.theme-switch__toggle:checked~.theme-switch__marker {
+    transform: translateX(20px);
+}
+
+.theme-switch__toggle:focus+.theme-switch__track,
+.theme-switch__toggle:active+.theme-switch__track {
+    box-shadow: 0 0 0 1px #ff6b08;
+}
+
+body.light-theme {
+    background-color: rgb(255, 255, 255);
+   
+}
+
+body.dark-theme {
+    background-image: url(../images/night-sky.jpg);
+
+    & .footer {
+        background: #ddd7d7;
+    }
+
+    & .footer-text {
+        color: rgb(51, 51, 51);
+    }
+
+    & .theme-switch__icon {
+        color: #ff6b08;
+    }
+
+    & .gallery__item__title {
+        color: #ffffff;
+    }
+
+    & .tui-pagination .tui-page-btn {
+        color: #ffffff;
+    }
+
+    & .modal-wrapper,
+    & .modal-icon {
+        background-color: #d7d7d7;
+    }
+
+    & .title-description {
+        color: #bf793e;
+    }
+}

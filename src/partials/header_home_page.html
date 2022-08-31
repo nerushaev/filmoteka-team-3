@@ -1,37 +1,70 @@
 <header class="header">
-    <!-- <div class="header__nav"> -->
-        <div class="container header__container">
-            <a href="/src/index.html" class="header__logo">
-                <svg class="logo__icon" width="24" height="24">
-                    <use href="./images/header_home_page/icons.svg#icon-logo"></use>
-                </svg>
-                <span class="header__logo-name">Filmoteka</span>
+  <!-- <div class="header__nav"> -->
+  <div class="container header__container">
+    <a href="/src/index.html" class="header__logo">
+      <svg class="logo__icon" width="24" height="24">
+        <use href="./images/header_home_page/icons.svg#icon-logo"></use>
+      </svg>
+      <span class="header__logo-name">Filmoteka</span>
+    </a>
+    <nav class="header__nav-page">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link nav__link--current" href="/src/index.html"
+            >Home</a
+          >
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/src/myLibrary.html">My library</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- </div> -->
+  <!-- Tema -->
+  <div class="theme-switch container">
+    <svg
+      class="theme-switch__icon icon-sun"
+      role="img"
+      aria-label="Иконка солнца"
+    >
+      <use href="./images/icons.svg#sun"></use>
+    </svg>
 
-            </a>
-            <nav class="header__nav-page">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a class="nav__link nav__link--current" href="/src/index.html">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="/src/myLibrary.html">My library</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    <!-- </div> -->
-        <form action="" class="header__form container">
-            <div class="header__form--data">
+    <div class="theme-switch__control">
+      <input
+        class="theme-switch__toggle"
+        type="checkbox"
+        name="theme"
+        id="theme-switch-toggle"
+        aria-label="Переключить между тёмной и светлой темой"
+      />
+      <label
+        aria-hidden="true"
+        class="theme-switch__track"
+        for="theme-switch-toggle"
+      >
+      </label>
+      <div aria-hidden="true" class="theme-switch__marker"></div>
+    </div>
 
-            <input type="text" name="search" class="header__input" placeholder="Movie search">
+    <svg class="theme-switch__icon icon-moon" aria-label="Иконка луны">
+      <use href="./images/icons.svg#moon"></use>
+    </svg>
+  </div>
 
-            <svg class="form-icon" width="12" height="12">
-                <use href="./images/header_home_page/icons.svg#icon-search"></use>
-            </svg>
-
-            <span class="form-notification hidden">Search result not successful. Enter the correct movie name and</span>
-
-            </div>
-        </form>
-    
+  <form action="" class="header__form container">
+    <div class="header__form--data">
+      <input
+        type="text"
+        name="search"
+        class="header__input"
+        placeholder="Movie search"
+      >
+      <svg class="form-icon" width="12" height="12">
+        <use href="./images/header_home_page/icons.svg#icon-search"></use>
+      </svg>
+      <span class="form-notification hidden">Search result not successful. Enter the correct movie name and try again</span>
+    </div>
+  </form>
 </header>
