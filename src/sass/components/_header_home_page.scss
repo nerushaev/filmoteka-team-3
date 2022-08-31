@@ -35,7 +35,11 @@
 .header__container{
     display: flex;
     padding-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+
+    @include mq(tablet) {
+        margin-bottom: 20px;
+    }
 }
 .header__logo{
     margin-right: auto;

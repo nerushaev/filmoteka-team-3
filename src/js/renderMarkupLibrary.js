@@ -14,6 +14,8 @@ let queueLength = 0;
 libraryStart();
 
 function libraryStart() {
+  const pagination = createPagination();
+    console.log(pagination);
   try {
    watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
   } catch (error) {
@@ -55,8 +57,7 @@ async function onWatchedLibrary(evt) {
       return;
     }
   
-  const pagination = createPagination();
-  console.log(pagination);
+  
   renderMarkupLibrary(data);
       refs.galleryMessage.classList.add('hidden');
 }
@@ -113,6 +114,5 @@ function renderMarkupLibrary(data) {
             </li>`;
     })
     .join('');
-  
     refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
 }
