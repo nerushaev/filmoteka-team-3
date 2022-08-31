@@ -192,10 +192,24 @@ margin-bottom: 8px;
 .film-description--btns{
 display: flex;
 justify-content: space-between;
-@include mq(desktop){
-    display: block;
+     
+@include mq(tablet){
+    width: 264px;
+    bottom: 20px;
+    right: 70px;
+    position: absolute;
         } 
+@include mq(desktop){
+    width: 391px;
+    bottom: 40px;
+    right: 20px;
+    position: absolute;
+    justify-content: space-evenly;
+    } 
 }
+    
+
+
 .film-description--btn {
     @include text(12px, 500, 1.67, normal); 
     width: 110px;
@@ -215,10 +229,9 @@ justify-content: space-between;
             }
     @include mq(desktop){
         width: 136px;
-        margin-left: 18px;
     }       
-}
 
+}
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
