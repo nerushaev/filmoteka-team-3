@@ -6,33 +6,42 @@ import storage from "./storage";
 import { createPagination, scrollUp } from './pagination';
 import { clearPreviousResults } from './loadHomePage';
 
+// Добавляем слушателей на иконку и инпут
 userSearch.searchButton.addEventListener('click', loadQueryFilms);
 userSearch.userSearchInputRef.addEventListener('keydown', onEnterKeyPress)
 
-console.log(userSearch.formNotificationErr);
+// console.log(userSearch.formNotificationErr);
 
+// Функция запроса фильма 
 async function loadQueryFilms() {
   // Включаем лоадер
   enableLoader();
   try {
-        // Выполняем запрос по введенной информации
+    // Выполняем запрос по введенной информации
     const response = await getMovie();
+    //Если приходит 0 выключаем лоадер и выходим из функции
     if (response.total_results <= 0) {
+    // Добавляем плашку с ошибкой
       userSearch.formNotificationErr.classList.remove('hidden');
       disableLoader();
       return;
-    } else {
+    } // Если запрос не пустой, проверяем на месте ли плашка, если да - убираем
+    else {
       if (!userSearch.formNotificationErr.classList.contains('hidden')) {
         userSearch.formNotificationErr.classList.add('hidden');
       }
     // Сохраняем полученую информацию в локал сторедж
     storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
     console.log(response);
-      
+    // Обнуляем разметку
     refs.homePageGallery.innerHTML = "";
+    // Рендерим из полученого массива объектов карточки
     renderMarkupPopularFilms(response.results);
+    // Выключаем лоадер
     disableLoader();
+    // Сохраняем общее колличество результатов
     const totalResult = response.total_results;
+    // Сохраняем общее колличество страниц
     let currentPage = response.page;
     console.log(currentPage);
     
