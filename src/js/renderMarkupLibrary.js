@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
+import { createPagination } from './pagination';
 // import notify from 
 
 
@@ -13,6 +14,10 @@ let queueLength = 0;
 libraryStart();
 
 function libraryStart() {
+  const pagination = createPagination();
+  pagination.setItemsPerPage(20);
+  console.log(pagination);
+  
   try {
    watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
   } catch (error) {
@@ -53,6 +58,8 @@ async function onWatchedLibrary(evt) {
       refs.galleryMessage.classList.remove('hidden');
       return;
     }
+  
+  
   renderMarkupLibrary(data);
       refs.galleryMessage.classList.add('hidden');
 }
@@ -109,6 +116,5 @@ function renderMarkupLibrary(data) {
             </li>`;
     })
     .join('');
-  
     refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
 }

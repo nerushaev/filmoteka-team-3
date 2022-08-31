@@ -2,7 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+
+    @include mq(mobile-only){
+        margin-bottom: 10px;
+    }
 }
 
 .theme-switch__icon {

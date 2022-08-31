@@ -1,10 +1,5 @@
-
-import { fetchData } from './getPopularFilms';
 import Pagination from 'tui-pagination';
-import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
-// import 'tui-pagination/dist/tui-pagination.min.css';
-import { loadHomePage } from './loadHomePage';
-import { fetchData } from './getPopularFilms';
+// import { loadHomePage } from './loadHomePage';
 
 
 //========ПЕРВЫЙ ВАРИАНТ (подключение библиотеки TUI PAGINATION)======
