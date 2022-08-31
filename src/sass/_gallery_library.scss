@@ -197,3 +197,20 @@
 //         height: auto;
 //     }
 // }
+
+.gallery__items__notfound {
+    display: flex;
+    justify-content: center;
+
+    top: 40px;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.14;
+    color: #FF001B;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
