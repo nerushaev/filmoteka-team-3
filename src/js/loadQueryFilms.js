@@ -3,7 +3,7 @@ import { disableLoader, enableLoader } from "./loader";
 import { refs, userSearch } from './refs';
 import { renderMarkupPopularFilms } from "./renderMarkupPopularFilms";
 import storage from "./storage";
-import { createPagination } from './pagination';
+import { createPagination, scrollUp } from './pagination';
 import { clearPreviousResults } from './loadHomePage';
 
 userSearch.searchButton.addEventListener('click', loadQueryFilms);
@@ -38,16 +38,16 @@ async function loadQueryFilms() {
     
     const pagination = createPagination();
     pagination.setItemsPerPage(20);
-    // pagination.setTotalItems(totalResult);
-    pagination.reset(totalResult)
+    pagination.setTotalItems(totalResult);
     pagination.movePageTo(currentPage);
+      
     pagination.on('afterMove', e => {
       const currentPage = e.page;
       console.log(currentPage);
-      window.scrollTo({ top: 240, behavior: 'smooth' });
       onSearchPagination(currentPage)
-      // up();
+      scrollUp();
     })
+      
     }
   }
  catch (err) {
@@ -64,11 +64,16 @@ async function onSearchPagination(currentPage) {
   storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
   console.log(data);
 
-    clearPreviousResults();
-
-    renderMarkupPopularFilms(data);
+  clearPreviousResults();
+  renderMarkupPopularFilms(data);
 }
 
+function onEnterKeyPress(event) {
+  if (event.code === 'Enter') {
+  event.preventDefault();
+      loadQueryFilms();
+  }
+}
 
 
 //-----loadQueryFilms без пагинации-----

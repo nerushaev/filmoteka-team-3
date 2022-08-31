@@ -5,6 +5,7 @@ export async function fetchData(currentPage) {
   if (currentPage === undefined) {
     currentPage = 1;
   }
+  
   const parametrs = new URLSearchParams({
     api_key: `${refs.API_KEY}`,
     page: `${currentPage}`,
