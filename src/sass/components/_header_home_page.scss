@@ -39,6 +39,8 @@
 }
 .header__logo{
     margin-right: auto;
+    transition: 1s;
+        text-align: center;
 }
 .header__logo-name{
     font-weight: 500;
@@ -49,6 +51,11 @@
     @include mq(mobile-only){
         display: none;
     }
+}
+
+.header__logo:hover,
+.header__logo:focus{
+    transform: scale(1.2);
 }
 .header__nav-page{
     display: flex;
@@ -74,6 +81,12 @@
 .nav__link{
     color: #fff;
         text-transform: uppercase;
+
+    transition: 1s;
+    // text-align: center;
+}
+.nav__link:hover{
+    transform: scale(1.2);
 }
 
 .nav__item:not(:last-child){
@@ -127,6 +140,12 @@
     @include mq(desktop){
         width: 394px;
     }
+}
+
+.header__input:hover,
+.header__input:focus {
+    outline: none;
+    border-bottom: 0.5px solid #ff6b01;
 }
 .header__input::placeholder{
     color: #FFFFFF;

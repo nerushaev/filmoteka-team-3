@@ -4,7 +4,7 @@ import Pagination from 'tui-pagination';
 import { renderMarkupPopularFilms } from './renderMarkupPopularFilms';
 // import 'tui-pagination/dist/tui-pagination.min.css';
 import { loadHomePage } from './loadHomePage';
-import { fetchData } from './getPopularFilms';
+// import { fetchData } from './getPopularFilms';
 
 
 //========ПЕРВЫЙ ВАРИАНТ (подключение библиотеки TUI PAGINATION)======

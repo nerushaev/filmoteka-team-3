@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
+import { createPagination } from './pagination';
 // import notify from 
 
 
@@ -53,6 +54,9 @@ async function onWatchedLibrary(evt) {
       refs.galleryMessage.classList.remove('hidden');
       return;
     }
+  
+  const pagination = createPagination();
+  console.log(pagination);
   renderMarkupLibrary(data);
       refs.galleryMessage.classList.add('hidden');
 }
