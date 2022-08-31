@@ -109,10 +109,3 @@ function onEnterKeyPress(event) {
 //     console.log(err);
 //   }
 // }
-
-function onEnterKeyPress(event) {
-  if (event.code === 'Enter') {
-  event.preventDefault();
-      loadQueryFilms();
-  }
-}
