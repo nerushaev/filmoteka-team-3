@@ -129,6 +129,18 @@ body.dark-theme {
     .tui-pagination .tui-last,
     .tui-pagination .tui-prev-is-ellip,
     .tui-pagination .tui-next-is-ellip{
-        background-color: #1a1a1a;
+        background-color: hsl(33deg 100% 50%);
+    }
+        & .tui-pagination .tui-first:hover,
+        .tui-pagination .tui-prev:hover,
+        .tui-pagination .tui-next:hover,
+        .tui-pagination .tui-last:hover,
+        .tui-pagination .tui-prev-is-ellip:hover,
+        .tui-pagination .tui-next-is-ellip:hover {
+            background-color:#ff6b08;
+        }
+
+    & .tui-page-btn.tui-is-disabled {
+        background-color: transparent;
     }
 }
