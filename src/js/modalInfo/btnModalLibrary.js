@@ -24,7 +24,9 @@ btnQueueLibrary.classList.remove('active-btn')
 btnQueueLibrary.textContent = 'Add to queue'
 let indexMovie = arrIdQueue.indexOf(idStorageQueue)
 arrIdQueue.splice(indexMovie, 1);
-localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))}
+  localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))
+  location.href = location.href;
+}
 }
 
 
@@ -46,7 +48,9 @@ btnWatchedLibrary.classList.remove('active-btn')
 btnWatchedLibrary.textContent = 'Add to wached'
 let indexMovie = arrIdWatched.indexOf(idStorageWatched)
 arrIdWatched.splice(indexMovie, 1);
-localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))}
+localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
+location.href=location.href;
+}
 }
 
 
