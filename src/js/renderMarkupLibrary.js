@@ -8,7 +8,7 @@ refs.watchedBtnLibrary.addEventListener('click', onWatchedLibrary);
 refs.queueBtnLibrary.addEventListener('click', onQueueLibrary);
 
 let watchedLength = 0;
-let queueLength = 0;
+// let queueLength = 0;
 
 libraryStart();
 
@@ -20,23 +20,13 @@ function libraryStart() {
     watchedLength = 0;
   };
 
-  try {
-    queueLength = (storage.load(refs.LS_KEY_QUERY_MOVIE)).length;
-  } catch (error) {
-    queueLength = 0;
-  };
-
-  if (watchedLength === 0 && queueLength === 0) {
+  if (watchedLength === 0) {
     refs.galleryMessage.classList.remove('hidden');
-  } else if (watchedLength != 0) {
-    refs.galleryMessage.classList.add('hidden');
-    
-    // refs.watchedBtnLibrary.classList.add('btn__is-active');
-    // refs.queueBtnLibrary.classList.remove('btn__is-active');
-    refs.galleryContainerLibrary.innerHTML = '';
+  } else if (watchedLength !== 0) {
+  
     const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
-
-    console.log(data.length);
+    refs.galleryMessage.classList.add('hidden');
+    refs.galleryContainerLibrary.innerHTML = '';
     renderMarkupLibrary(data);
   }
 }
@@ -45,54 +35,42 @@ function libraryStart() {
 async function onWatchedLibrary(evt) {
     evt.preventDefault();
     refs.watchedBtnLibrary.classList.add('btn__is-active');
-  refs.queueBtnLibrary.classList.remove('btn__is-active');
+    refs.queueBtnLibrary.classList.remove('btn__is-active');
   
-    // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  refs.galleryContainerLibrary.innerHTML = '';
+  refs.galleryMessage.classList.add('hidden');
+  
+  const dataWat = await storage.load(refs.LS_KEY_WATCH_MOVIE);
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
 
-  // console.log(childNodesGallery);
-  // if (childNodesGallery.length !== 0) {
-  //   console.log("aaa");
-  //   refs.galleryMessage.classList.remove('hidden');
-  // }
+  renderMarkupLibrary(dataWat);
 
-   // console.log(refs.galleryContainerLibrary);
-    refs.galleryContainerLibrary.innerHTML = '';
-    const data = await storage.load(refs.LS_KEY_WATCH_MOVIE);
-    if (!data) {
-      refs.galleryMessage.classList.remove('hidden');
-      return;
-    } else {
-      renderMarkupLibrary(data);
-    }
+  if (childNodesGallery.length === 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
   
-  
-  // refs.galleryMessage.classList.add('hidden');
+
 }
 
 async function onQueueLibrary(evt) {
    evt.preventDefault();
-    refs.queueBtnLibrary.classList.add('btn__is-active');
-  refs.watchedBtnLibrary.classList.remove('btn__is-active');
+   refs.queueBtnLibrary.classList.add('btn__is-active');
+    refs.watchedBtnLibrary.classList.remove('btn__is-active');
+
+    
+  refs.galleryContainerLibrary.innerHTML = '';
+  refs.galleryMessage.classList.add('hidden');
+
+  const dataQue = await storage.load(refs.LS_KEY_QUERY_MOVIE);
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+
+  renderMarkupLibrary(dataQue);
   
-  // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
-
-  // if (childNodesGallery.length !== 0) {
-  //   console.log("aaa");
-  //   refs.galleryMessage.classList.add('hidden');
-  // }
-
-    refs.galleryContainerLibrary.innerHTML = '';
-  const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
-  console.log(data);
-    if (data.length === 0) {
-      refs.galleryMessage.classList.remove('hidden');
-      return;
-    } else {
-        renderMarkupLibrary(data);
-    }
-   // console.log(data);
-  // renderMarkupLibrary(data);
-      // refs.galleryMessage.classList.add('hidden');
+    if (childNodesGallery.length === 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
 }
 
 function renderMarkupLibrary(data) {

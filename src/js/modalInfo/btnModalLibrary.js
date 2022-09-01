@@ -30,6 +30,12 @@ localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))
   if (refs.galleryContainerLibrary) {
     card.remove();
   }
+
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  if (childNodesGallery.length === 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
 }
 }
 
@@ -57,15 +63,12 @@ localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
   if (refs.galleryContainerLibrary) {
     card.remove();
   }
-
-  // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
-  // console.log(childNodesGallery);
-  // console.log(refs.galleryMessage);
-
-  // if (childNodesGallery.length === 0) {
-  //   console.log("aaa");
-  //   refs.galleryMessage.classList.remove('hidden');
-  // }
+  
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  if (childNodesGallery.length === 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
 }
 }
 
