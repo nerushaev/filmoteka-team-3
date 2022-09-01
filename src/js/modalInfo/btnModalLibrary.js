@@ -38,12 +38,12 @@ let arrayId = arrFilms.find(obj => obj.id === filmIdWatched)
 
 if(btnWatchedLibrary.classList.contains('active-btn') === false){
 btnWatchedLibrary.classList.add('active-btn')
-btnWatchedLibrary.textContent = 'Remove from watched'
+btnWatchedLibrary.textContent = 'Remove from wached'
 arrIdWatched.push(arrayId) 
 localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))}
 else{
 btnWatchedLibrary.classList.remove('active-btn')
-btnWatchedLibrary.textContent = 'Add to watched'
+btnWatchedLibrary.textContent = 'Add to wached'
 let indexMovie = arrIdWatched.indexOf(idStorageWatched)
 arrIdWatched.splice(indexMovie, 1);
 localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))}
