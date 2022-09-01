@@ -10,9 +10,7 @@
         @include mq(retina) {
                 background-image: url(../images/header_home_page/header_sm@2x.png);
             }
-           
     }
-    
 
     @include mq(tablet-only){
         background-image: url(../images/header_home_page/header_md.png);
@@ -175,26 +173,36 @@
 }
 
 .form-notification {
-    display: block;
     position: absolute;
     top: 40px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
-    color: #FF001B;
-width: 460px;
-animation: typing 2s steps(22);
-white-space: nowrap;
+    color: rgb(255, 0, 27);
+// width: 460px;
+animation: animate_pulse 1.5s infinite;
+white-space: normal;
 overflow: hidden;
+text-align: center;
 }
-@keyframes typing {
-    from {
-        width: 0;
+@keyframes animate_pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(225, 0, 27, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(225,0,27, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(225,0,27, 0);
     }
 }
-
-
-
+// @keyframes typing {
+//     from {
+//         width: 0;
+//     }
+// }
 
 .hidden {
     display: none;
@@ -207,19 +215,5 @@ overflow: hidden;
     background-color: #FF001B;;
 }
 
-// @keyframes logo__icon {
-//     from {
-//         opacity: 0;
-//     }
-
-//     to {
-//         opacity: 1;
-//     }
-// }
-
-// .logo__icon {
-//     animation: logo__icon 2s ease-in infinite alternate;
-
-// }
 
 

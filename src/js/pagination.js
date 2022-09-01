@@ -42,8 +42,6 @@ export function scrollUp() {
 //-------ДАЛЬНЕЙШАЯ РАБОТА В ФАЙЛЕ loadHomePage-------
 
 
-
-
 // =======ВТОРОЙ ВАРИАНТ (НЕ СРАБАТЫВАЕТ onclick)============
 
 // const pagList = document.querySelector(".pagination-list");

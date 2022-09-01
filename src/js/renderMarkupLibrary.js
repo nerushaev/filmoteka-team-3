@@ -1,7 +1,6 @@
 import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
-import { createPagination } from './pagination';
 // import notify from 
 
 
@@ -14,9 +13,7 @@ let queueLength = 0;
 libraryStart();
 
 function libraryStart() {
-  // const pagination = createPagination();
-  // console.log(pagination);
-  
+
   try {
     watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
   } catch (error) {
@@ -41,32 +38,8 @@ function libraryStart() {
 
     console.log(data.length);
     renderMarkupLibrary(data);
-
-  //   let totalResult = data.length;
-  // const currentPage = 1;
-  // const totalPagesLib = totalResult / currentPage;
-  //   console.log(totalPagesLib);
-    
-  //   pagination.setTotalItems(totalResult);
-  //   pagination.setItemsPerPage(6);
-  //   pagination.movePageTo(currentPage)
-    
-  //   pagination.on('afterMove', e => {
-  //         const currentPage = e.page;
-  //         console.log(currentPage);
-      
-  //         // scrollUp();
-  //   })
   }
 }
-
-// function getDataLibrary(data) {
-//   let totalResult = data.length;
-//   const currentPage = 6;
-//   const totalPagesLib = totalResult / currentPage;
-//   console.log(totalPagesLib);
-
-// }
 
 
 async function onWatchedLibrary(evt) {
