@@ -74,13 +74,13 @@ async function onWatchedLibrary(evt) {
     refs.watchedBtnLibrary.classList.add('btn__is-active');
   refs.queueBtnLibrary.classList.remove('btn__is-active');
   
-    const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+    // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
 
-  console.log(childNodesGallery);
-  if (childNodesGallery.length !== 0) {
-    console.log("aaa");
-    refs.galleryMessage.classList.remove('hidden');
-  }
+  // console.log(childNodesGallery);
+  // if (childNodesGallery.length !== 0) {
+  //   console.log("aaa");
+  //   refs.galleryMessage.classList.remove('hidden');
+  // }
 
    // console.log(refs.galleryContainerLibrary);
     refs.galleryContainerLibrary.innerHTML = '';
@@ -101,12 +101,12 @@ async function onQueueLibrary(evt) {
     refs.queueBtnLibrary.classList.add('btn__is-active');
   refs.watchedBtnLibrary.classList.remove('btn__is-active');
   
-  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
 
-  if (childNodesGallery.length !== 0) {
-    console.log("aaa");
-    refs.galleryMessage.classList.add('hidden');
-  }
+  // if (childNodesGallery.length !== 0) {
+  //   console.log("aaa");
+  //   refs.galleryMessage.classList.add('hidden');
+  // }
 
     refs.galleryContainerLibrary.innerHTML = '';
   const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);

@@ -58,14 +58,14 @@ localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
     card.remove();
   }
 
-  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
-  console.log(childNodesGallery);
-  console.log(refs.galleryMessage);
+  // const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  // console.log(childNodesGallery);
+  // console.log(refs.galleryMessage);
 
-  if (childNodesGallery.length === 0) {
-    console.log("aaa");
-    refs.galleryMessage.classList.remove('hidden');
-  }
+  // if (childNodesGallery.length === 0) {
+  //   console.log("aaa");
+  //   refs.galleryMessage.classList.remove('hidden');
+  // }
 }
 }
 
