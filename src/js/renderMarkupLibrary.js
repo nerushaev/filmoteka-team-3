@@ -14,20 +14,19 @@ let queueLength = 0;
 libraryStart();
 
 function libraryStart() {
-  const pagination = createPagination();
-  pagination.setItemsPerPage(20);
-  console.log(pagination);
+  // const pagination = createPagination();
+  // console.log(pagination);
   
   try {
-   watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
+    watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
   } catch (error) {
-   watchedLength = 0;
+    watchedLength = 0;
   };
 
   try {
-   queueLength = (storage.load(refs.LS_KEY_QUERY_MOVIE)).length;
+    queueLength = (storage.load(refs.LS_KEY_QUERY_MOVIE)).length;
   } catch (error) {
-   queueLength = 0;
+    queueLength = 0;
   };
 
   if (watchedLength === 0 && queueLength === 0) {
@@ -39,10 +38,35 @@ function libraryStart() {
     // refs.queueBtnLibrary.classList.remove('btn__is-active');
     refs.galleryContainerLibrary.innerHTML = '';
     const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
-    renderMarkupLibrary(data);
-  }
 
+    console.log(data.length);
+    renderMarkupLibrary(data);
+
+  //   let totalResult = data.length;
+  // const currentPage = 1;
+  // const totalPagesLib = totalResult / currentPage;
+  //   console.log(totalPagesLib);
+    
+  //   pagination.setTotalItems(totalResult);
+  //   pagination.setItemsPerPage(6);
+  //   pagination.movePageTo(currentPage)
+    
+  //   pagination.on('afterMove', e => {
+  //         const currentPage = e.page;
+  //         console.log(currentPage);
+      
+  //         // scrollUp();
+  //   })
+  }
 }
+
+// function getDataLibrary(data) {
+//   let totalResult = data.length;
+//   const currentPage = 6;
+//   const totalPagesLib = totalResult / currentPage;
+//   console.log(totalPagesLib);
+
+// }
 
 
 async function onWatchedLibrary(evt) {
@@ -58,7 +82,6 @@ async function onWatchedLibrary(evt) {
       refs.galleryMessage.classList.remove('hidden');
       return;
     }
-  
   
   renderMarkupLibrary(data);
       refs.galleryMessage.classList.add('hidden');
@@ -116,5 +139,6 @@ function renderMarkupLibrary(data) {
             </li>`;
     })
     .join('');
-    refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
+  refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
+  
 }
