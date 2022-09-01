@@ -219,6 +219,7 @@ justify-content: space-between;
     text-transform: uppercase;  
     text-align: center;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    height: 44px;
     &:hover{
         background-color: #FF6B01;
         color: #ffffff;
@@ -236,6 +237,10 @@ justify-content: space-between;
     background-color: #FF6B01;
     color: #ffffff;
     border-color: #FF6B01;
+    // padding-left: 0;
+    // padding-right: 0;
+    font-size: 11px;
+    // letter-spacing: -1px;
 }
 .stop-scrolling {
     height: 100%;
