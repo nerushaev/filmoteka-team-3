@@ -1,4 +1,5 @@
 import { refs } from "../refs";
+import { storage } from '../storage';
 
 const btnQueueLibrary = document.querySelector('#btn__info--queue');
 const btnWatchedLibrary = document.querySelector('#btn__info--watched');
@@ -13,12 +14,12 @@ const arrFilms = JSON.parse(localStorage.getItem(refs.LS_KEY_POPULAR_MOVIE));
 let arrayId = arrFilms.find(obj => obj.id === filmIdQueue)
 const idStorageQueue = arrIdQueue.find(obj => obj.id === filmIdQueue)
 
+  
+
+
 if(btnQueueLibrary.classList.contains('active-btn') === false){
 btnQueueLibrary.classList.add('active-btn')
 btnQueueLibrary.textContent = 'Remove from queue'
-if(idStorageQueue){
-return
-}
 arrIdQueue.push(arrayId)
 localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))}
 else{
@@ -41,16 +42,14 @@ let arrayId = arrFilms.find(obj => obj.id === filmIdWatched)
 if(btnWatchedLibrary.classList.contains('active-btn') === false){
 btnWatchedLibrary.classList.add('active-btn')
 btnWatchedLibrary.textContent = 'Remove from wached'
-if(idStorageWatched){
-return
-}
 arrIdWatched.push(arrayId) 
 localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))}
 else{
 btnWatchedLibrary.classList.remove('active-btn')
 btnWatchedLibrary.textContent = 'Add to wached'
-let indexMovie = arrIdWatched.indexOf(idStorageQueue)
+let indexMovie = arrIdWatched.indexOf(idStorageWatched)
 arrIdWatched.splice(indexMovie, 1);
-localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdWatched))}
+localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))}
 }
+
 

@@ -142,3 +142,5 @@ function renderMarkupLibrary(data) {
   refs.galleryContainerLibrary.insertAdjacentHTML("afterbegin", markup);
   
 }
+
+

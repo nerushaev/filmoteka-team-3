@@ -1,7 +1,11 @@
 import { refs } from '../refs';
 import storage from '../storage';
 import { generateMarkupModalInfo } from './markupModalInfo';
+// import { checkLocalStorage } from './btnModalLibrary';
  
+const btnQueueLibrary = document.querySelector('#btn__info--queue');
+const btnWatchedLibrary = document.querySelector('#btn__info--watched');
+
 const DELAY = 250;
 
 // Слушатели
@@ -41,7 +45,9 @@ async function onOpenModalInfo(evt) {
     const selectedMovie = allMovie.find(loadMovie => loadMovie.id === idMovie);
 
     appendInfoForModalMarkup(selectedMovie);
-
+    console.log(allMovie);
+    checkQueryStorage(quereMovies);
+    checkWatchedStorage(watchMovies);
     document.body.classList.add('stop-scrolling');
     window.addEventListener('keydown', onEscKeyPress);
     refs.backdropEl.classList.remove('backdrop__is-hidden');
@@ -81,3 +87,31 @@ export function clearInfoForModalMarkup() {
     }, DELAY);
 }
 
+async function checkQueryStorage(allMovies) {
+    const filmIdQueue = Number(document.querySelector('.film-screen').id)
+
+    const haveMovies = allMovies.find(obj => obj.id === filmIdQueue);
+
+    if (haveMovies) {
+    btnQueueLibrary.classList.add('active-btn');
+    btnQueueLibrary.textContent = 'Remove from queue'
+    } else {
+    btnQueueLibrary.classList.remove('active-btn');
+    btnQueueLibrary.textContent = 'Add to queue';
+    }
+
+}
+
+async function checkWatchedStorage(data) {
+    const filmIdQueue = Number(document.querySelector('.film-screen').id)
+
+    const haveMovies = data.find(obj => obj.id === filmIdQueue);
+
+    if (haveMovies) {
+    btnWatchedLibrary.classList.add('active-btn');
+    btnWatchedLibrary.textContent = 'Remove from watched'
+    } else {
+    btnWatchedLibrary.classList.remove('active-btn');
+    btnWatchedLibrary.textContent = 'Add to watched';
+    }
+}
