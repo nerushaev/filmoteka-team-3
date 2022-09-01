@@ -57,6 +57,15 @@ localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
   if (refs.galleryContainerLibrary) {
     card.remove();
   }
+
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+  console.log(childNodesGallery);
+  console.log(refs.galleryMessage);
+
+  if (childNodesGallery.length === 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
 }
 }
 

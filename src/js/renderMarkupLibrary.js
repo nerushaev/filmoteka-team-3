@@ -72,7 +72,15 @@ function libraryStart() {
 async function onWatchedLibrary(evt) {
     evt.preventDefault();
     refs.watchedBtnLibrary.classList.add('btn__is-active');
-    refs.queueBtnLibrary.classList.remove('btn__is-active');
+  refs.queueBtnLibrary.classList.remove('btn__is-active');
+  
+    const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+
+  console.log(childNodesGallery);
+  if (childNodesGallery.length !== 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.remove('hidden');
+  }
 
    // console.log(refs.galleryContainerLibrary);
     refs.galleryContainerLibrary.innerHTML = '';
@@ -91,7 +99,14 @@ async function onWatchedLibrary(evt) {
 async function onQueueLibrary(evt) {
    evt.preventDefault();
     refs.queueBtnLibrary.classList.add('btn__is-active');
-    refs.watchedBtnLibrary.classList.remove('btn__is-active');
+  refs.watchedBtnLibrary.classList.remove('btn__is-active');
+  
+  const childNodesGallery = refs.galleryContainerLibrary.childNodes;
+
+  if (childNodesGallery.length !== 0) {
+    console.log("aaa");
+    refs.galleryMessage.classList.add('hidden');
+  }
 
     refs.galleryContainerLibrary.innerHTML = '';
   const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
