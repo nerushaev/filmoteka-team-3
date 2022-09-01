@@ -76,15 +76,16 @@ async function onWatchedLibrary(evt) {
 
    // console.log(refs.galleryContainerLibrary);
     refs.galleryContainerLibrary.innerHTML = '';
-
     const data = await storage.load(refs.LS_KEY_WATCH_MOVIE);
     if (!data) {
       refs.galleryMessage.classList.remove('hidden');
       return;
+    } else {
+      renderMarkupLibrary(data);
     }
   
-  renderMarkupLibrary(data);
-      refs.galleryMessage.classList.add('hidden');
+  
+  // refs.galleryMessage.classList.add('hidden');
 }
 
 async function onQueueLibrary(evt) {
@@ -93,14 +94,17 @@ async function onQueueLibrary(evt) {
     refs.watchedBtnLibrary.classList.remove('btn__is-active');
 
     refs.galleryContainerLibrary.innerHTML = '';
-    const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
-    if (!data) {
+  const data = await storage.load(refs.LS_KEY_QUERY_MOVIE);
+  console.log(data);
+    if (data.length === 0) {
       refs.galleryMessage.classList.remove('hidden');
       return;
+    } else {
+        renderMarkupLibrary(data);
     }
    // console.log(data);
-  renderMarkupLibrary(data);
-      refs.galleryMessage.classList.add('hidden');
+  // renderMarkupLibrary(data);
+      // refs.galleryMessage.classList.add('hidden');
 }
 
 function renderMarkupLibrary(data) {
