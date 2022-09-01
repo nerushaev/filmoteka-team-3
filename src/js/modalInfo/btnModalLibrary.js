@@ -14,9 +14,6 @@ const arrFilms = JSON.parse(localStorage.getItem(refs.LS_KEY_POPULAR_MOVIE));
 let arrayId = arrFilms.find(obj => obj.id === filmIdQueue)
 const idStorageQueue = arrIdQueue.find(obj => obj.id === filmIdQueue)
 
-  
-
-
 if(btnQueueLibrary.classList.contains('active-btn') === false){
 btnQueueLibrary.classList.add('active-btn')
 btnQueueLibrary.textContent = 'Remove from queue'
@@ -31,7 +28,7 @@ localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))}
 }
 
 
-function addToWatchedList(){ 
+function addToWatchedList() {
 
 const arrIdWatched = JSON.parse(localStorage.getItem(refs.LS_KEY_WATCH_MOVIE) || `[]`)
 const filmIdWatched = Number(document.querySelector('.film-screen').id)
