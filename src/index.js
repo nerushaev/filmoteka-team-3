@@ -13,4 +13,5 @@ import './js/modalInfo/appModalInfo'; //  JS for open or close modal for informa
 import './js/modal';
 import './js/modalInfo/btnModalLibrary';
 import './js/loadQueryFilms.js';
+import './js/scrollUp.js';
 
