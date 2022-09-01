@@ -175,14 +175,27 @@
 }
 
 .form-notification {
+    display: block;
     position: absolute;
     top: 40px;
-    display: inline-block;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
     color: #FF001B;
+width: 460px;
+animation: typing 2s steps(22);
+white-space: nowrap;
+overflow: hidden;
 }
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+
+
+
 .hidden {
     display: none;
 }
