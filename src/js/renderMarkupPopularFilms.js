@@ -4,7 +4,7 @@ import { renderGenresHomePage } from './formattedGenresOnHomePage';
 export function renderMarkupPopularFilms(data) {
   const markup = data
     .map(({ id, poster_path, genre_ids, release_date, title }) => {
-      return `<li class="gallery__item">
+      return `<li class="gallery__item" data-id2="${id}">
                 <a  class="gallery__item__link" data-id="${id}" target="_blank" rel="noopener noreferrer">
                    ${
                      poster_path

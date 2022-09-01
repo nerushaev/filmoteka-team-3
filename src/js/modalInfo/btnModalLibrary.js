@@ -14,19 +14,22 @@ const arrFilms = JSON.parse(localStorage.getItem(refs.LS_KEY_POPULAR_MOVIE));
 let arrayId = arrFilms.find(obj => obj.id === filmIdQueue)
 const idStorageQueue = arrIdQueue.find(obj => obj.id === filmIdQueue)
 
-if(btnQueueLibrary.classList.contains('active-btn') === false){
+if(!btnQueueLibrary.classList.contains('active-btn')){
 btnQueueLibrary.classList.add('active-btn')
 btnQueueLibrary.textContent = 'Remove from queue'
 arrIdQueue.push(arrayId)
 localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))}
-else{
+else {
 btnQueueLibrary.classList.remove('active-btn')
 btnQueueLibrary.textContent = 'Add to queue'
 let indexMovie = arrIdQueue.indexOf(idStorageQueue)
 arrIdQueue.splice(indexMovie, 1);
-  localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))
-  const card = document.querySelector(`[data-id="${filmIdQueue}"]`);
-  card.innerHTML = '';
+localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))
+  const card = document.querySelector(`[data-id2="${filmIdQueue}"]`);
+  console.log(card);
+  if (refs.galleryContainerLibrary) {
+    card.remove();
+  }
 }
 }
 
@@ -50,8 +53,10 @@ btnWatchedLibrary.textContent = 'Add to watched'
 let indexMovie = arrIdWatched.indexOf(idStorageWatched)
 arrIdWatched.splice(indexMovie, 1);
 localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
-  const card = document.querySelector(`[data-id="${filmIdWatched}"]`);
-  card.innerHTML = '';
+  const card = document.querySelector(`[data-id2="${filmIdWatched}"]`);
+  if (refs.galleryContainerLibrary) {
+    card.remove();
+  }
 }
 }
 
