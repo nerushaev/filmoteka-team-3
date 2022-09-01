@@ -1,252 +1,249 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-    transition: opacity $Duration linear, visibility $Duration linear;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  transition: opacity $Duration linear, visibility $Duration linear;
 }
 .backdrop__is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
-.modal-wrapper{
-    position: absolute;
-    left: 50%;
-    top: 20px;
-    transform: translateX(-50%);
-    width: 280px;
-    padding: 48px 20px 40px 20px;
+.modal-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  width: 280px;
+  padding: 48px 20px 40px 20px;
 
-    background-color: #ffffff;
+  background-color: #ffffff;
 
-    @include mq(mobile-only) {
-        height: 90%;
-        overflow-y: scroll;
-    }
+  @include mq(mobile-only) {
+    height: 90%;
+    overflow-y: scroll;
+  }
 
-    @include mq(tablet){
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 704px;
-        max-height: 558px;
-        padding: 40px 72px 40px 40px;
-    }
+  @include mq(tablet) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 704px;
+    max-height: 558px;
+    padding: 40px 72px 40px 40px;
+  }
 
-    @include mq(desktop){
-        width: 806px;
-        padding: 40px 12px 40px 12px;
-    }
+  @include mq(desktop) {
+    width: 806px;
+    padding: 40px 12px 40px 12px;
+  }
 }
-.film-container--info{
-    display: flex;
-    justify-content: space-between;
-    @include mq(mobile-only){
-       display: block;
-        }
+.film-container--info {
+  display: flex;
+  justify-content: space-between;
+  @include mq(mobile-only) {
+    display: block;
+  }
 }
 .modal-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-    fill: #000000;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover{
-        background-color: #FF6B01;
-        border-color: #FF6B01;
-        fill: #ffffff;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  fill: #000000;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: #ff6b01;
+    border-color: #ff6b01;
+    fill: #ffffff;
+  }
 }
 .tumb__screen {
-    width: 240px;
-    height: 357px;
-    margin-bottom: 20px;
+  width: 240px;
+  height: 357px;
+  margin-bottom: 20px;
 
-    border-radius: 5px;
+  border-radius: 5px;
 
-    overflow: hidden;
-    background-image: url('../images/default-placeholder-image.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
+  overflow: hidden;
+  background-image: url('../images/default-placeholder-image.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
 
-    @include mq(tablet) {
-        width: 264px;
-        height: 374px;
-        margin-bottom: 0;
-    }
+  @include mq(tablet) {
+    width: 264px;
+    height: 374px;
+    margin-bottom: 0;
+  }
 
-    @include mq(desktop) {
-        width: 375px;
-        height: 478px;
-    }
-}
-
-.film-screen{    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @include mq(desktop) {
+    width: 375px;
+    height: 478px;
+  }
 }
 
-.film-container--descr{
-    @include mq(tablet){
-        width: 264px;
-            }
-    @include mq(desktop){
-        width: 391px;
-        }
-}
-.film-title{
-    @include text(20px, 500, 1.15, normal);
-    text-transform: uppercase;
-    color: black;
-    margin-bottom: 20px;
-    @include mq(tablet){
-        font-size: 20px;
-        line-height: 1.17;
-            }
-}
-.film-description{
- @include text(12px, 500, 1.8, normal);
- width: 100%;
- text-align: left;
- color: black;
- table-layout: fixed;
- margin-bottom: 20px;
- 
-}
-.title-description{
- color: #8C8C8C;
- font-weight: 500;
- padding: 0;
- width: 100px;
-}
-.film-description td{
-    width: 110px;
-    padding: 0;
-    word-wrap: break-word;
+.film-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+.film-container--descr {
+  @include mq(tablet) {
+    width: 264px;
+  }
+  @include mq(desktop) {
+    width: 391px;
+  }
+}
+.film-title {
+  @include text(20px, 500, 1.15, normal);
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 20px;
+  @include mq(tablet) {
+    font-size: 20px;
+    line-height: 1.17;
+  }
+}
+.film-description {
+  @include text(12px, 500, 1.8, normal);
+  width: 100%;
+  text-align: left;
+  color: black;
+  table-layout: fixed;
+  margin-bottom: 20px;
+}
+.title-description {
+  color: #8c8c8c;
+  font-weight: 500;
+  padding: 0;
+  width: 100px;
+}
+.film-description td {
+  width: 110px;
+  padding: 0;
+  word-wrap: break-word;
+}
 
-.description-vote{
-color:#ffffff;
-background: #FF6B01;
-margin-right: 3px;
+.description-vote {
+  color: #ffffff;
+  background: #ff6b01;
+  margin-right: 3px;
 }
-.description-votes{
-background: #F7F7F7;
-margin-left: 3px;
+.description-votes {
+  background: #f7f7f7;
+  margin-left: 3px;
 }
-.description-vote, .description-votes{
-    display: inline-block;
-    text-align: center;
-    padding: 1px 4px;
-    min-width: 36px;
-    border-radius: 5px;
+.description-vote,
+.description-votes {
+  display: inline-block;
+  text-align: center;
+  padding: 1px 4px;
+  min-width: 36px;
+  border-radius: 5px;
 }
 
 .description-genre,
 .description-title-original {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .title-original-description {
-text-transform: uppercase;
+  text-transform: uppercase;
 }
-.film-delineation--title{
-@include text(12px, 500, 1.33, normal);
-text-transform: uppercase;   
-margin-bottom: 8px;
-}
-
-.film-delineation{
-    @include text(12px, 500, 1.67, normal); 
-    color: #000000;
-    margin-bottom: 20px;
-    overflow-y: auto;
-
-    @include mq(tablet) {
-        max-height: 164px;
-    }
-    @include mq(desktop) {
-        max-height: 220px;
-    }
+.film-delineation--title {
+  @include text(12px, 500, 1.33, normal);
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.film-description--btns{
-display: flex;
-justify-content: space-between;
-     
-@include mq(tablet){
+.film-delineation {
+  @include text(12px, 500, 1.67, normal);
+  color: #000000;
+  margin-bottom: 20px;
+  overflow-y: auto;
+
+  @include mq(tablet) {
+    max-height: 164px;
+  }
+  @include mq(desktop) {
+    max-height: 220px;
+  }
+}
+
+.film-description--btns {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq(tablet) {
     width: 264px;
     bottom: 20px;
     right: 70px;
     position: absolute;
-        } 
-@include mq(desktop){
+  }
+  @include mq(desktop) {
     width: 391px;
     bottom: 40px;
     right: 20px;
     position: absolute;
     justify-content: space-evenly;
-    } 
+  }
 }
-    
-
 
 .film-description--btn {
-    @include text(12px, 500, 1.67, normal); 
-    width: 110px;
-    padding: 5px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    text-transform: uppercase;  
-    text-align: center;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover{
-        background-color: #FF6B01;
-        color: #ffffff;
-        border-color: #FF6B01;
-    }
-    @include mq(tablet){
-        width: 125px;
-            }
-    @include mq(desktop){
-        width: 136px;
-    }       
-
-}
-.active-btn{
-    background-color: #FF6B01;
+  @include text(12px, 500, 1.67, normal);
+  width: 110px;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 44px;
+  &:hover {
+    background-color: #ff6b01;
     color: #ffffff;
-    border-color: #FF6B01;
+    border-color: #ff6b01;
+  }
+  @include mq(tablet) {
+    width: 125px;
+  }
+  @include mq(desktop) {
+    width: 136px;
+  }
+}
+.active-btn {
+  background-color: #ff6b01;
+  color: #ffffff;
+  border-color: #ff6b01;
+  font-size: 11px;
 }
 .stop-scrolling {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 .modal-info__container {
-    height: 100%;
+  height: 100%;
 
-    @include mq(mobile-only) {
-        overflow-y: scroll;
-    }
-    
+  @include mq(mobile-only) {
+    overflow-y: scroll;
+  }
 }
