@@ -123,6 +123,17 @@ body.dark-theme {
     & .title-description {
         color: #bf793e;
     }
+
+    & #scrollTop {
+        color: #fff;
+        &:hover {
+            color: #333;
+        }
+        &:active {
+            color: #333;
+        }
+    }
+
     & .tui-pagination .tui-first,
     .tui-pagination .tui-prev,
     .tui-pagination .tui-next,
@@ -143,4 +154,5 @@ body.dark-theme {
     & .tui-page-btn.tui-is-disabled {
         background-color: transparent;
     }
+
 }

@@ -2,23 +2,29 @@
   display: none;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
   margin: 0;
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #d7d7d7;
-  color: #fff;
-//   font-size: 2em;
-  transition: background-color 0.25s;
+  background-color: #ff6b08;
+  color: #484848;
+  transition: color 0.25s;
   z-index: 1;
+
+  @include mq(mobile-only) {
+        width: 35px;
+        height: 35px;
+        bottom: 37px;
+        right: 20px;
+    }
 }
 #scrollTop:hover {
   cursor: pointer;
-  background-color: #ffa565;
+  color: #fff;
 }
 #scrollTop:active {
-  background-color: #ffa565;
+  color: #fff;
 }
