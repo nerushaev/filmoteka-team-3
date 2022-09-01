@@ -5,3 +5,4 @@ import './js/pagination';
 import './js/modal';
 import './js/modalInfo/appModalInfo';
 import './js/modalInfo/btnModalLibrary';
+import './js/scrollUp.js';

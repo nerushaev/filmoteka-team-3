@@ -9,8 +9,6 @@ btnScrollTop.addEventListener('click', function (e) {
   });
 });
 
-// const body = document.querySelector('body');
-
 setInterval(function displayBtnScrollTop() {
   if (window.scrollY >= 100) {
     btnScrollTop.style.display = 'flex';

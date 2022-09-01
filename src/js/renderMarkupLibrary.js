@@ -1,7 +1,6 @@
 import { refs } from './refs';
 import { renderGenresHomePage } from './formattedGenresOnHomePage';
 import storage from './storage';
-import { createPagination } from './pagination';
 // import notify from 
 
 
@@ -12,53 +11,6 @@ let watchedLength = 0;
 // let queueLength = 0;
 
 libraryStart();
-
-// function libraryStart() {
-//   // const pagination = createPagination();
-//   // console.log(pagination);
-  
-//   try {
-//     watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
-//   } catch (error) {
-//     watchedLength = 0;
-//   };
-
-//   try {
-//     queueLength = (storage.load(refs.LS_KEY_QUERY_MOVIE)).length;
-//   } catch (error) {
-//     queueLength = 0;
-//   };
-
-//   if (watchedLength === 0 && queueLength === 0) {
-//     refs.galleryMessage.classList.remove('hidden');
-//   } else if (watchedLength != 0) {
-//     refs.galleryMessage.classList.add('hidden');
-    
-//     // refs.watchedBtnLibrary.classList.add('btn__is-active');
-//     // refs.queueBtnLibrary.classList.remove('btn__is-active');
-//     refs.galleryContainerLibrary.innerHTML = '';
-//     const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
-
-//     console.log(data.length);
-//     renderMarkupLibrary(data);
-
-//   //   let totalResult = data.length;
-//   // const currentPage = 1;
-//   // const totalPagesLib = totalResult / currentPage;
-//   //   console.log(totalPagesLib);
-    
-//   //   pagination.setTotalItems(totalResult);
-//   //   pagination.setItemsPerPage(6);
-//   //   pagination.movePageTo(currentPage)
-    
-//   //   pagination.on('afterMove', e => {
-//   //         const currentPage = e.page;
-//   //         console.log(currentPage);
-      
-//   //         // scrollUp();
-//   //   })
-//   }
-// }
 
 function libraryStart() {
 
@@ -72,32 +24,12 @@ function libraryStart() {
     refs.galleryMessage.classList.remove('hidden');
   } else if (watchedLength !== 0) {
   
-
-
-    // if (!data || []) {
-    //   refs.galleryMessage.classList.remove('hidden');
-    //   return;
-    // } 
     const data = storage.load(refs.LS_KEY_WATCH_MOVIE);
     refs.galleryMessage.classList.add('hidden');
     refs.galleryContainerLibrary.innerHTML = '';
     renderMarkupLibrary(data);
   }
-
-  // watchedLength = (storage.load(refs.LS_KEY_WATCH_MOVIE)).length;
-
- 
-  
-  // if (watchedLength === 0) {
-  //   refs.galleryMessage.classList.remove('hidden');
-  // } else {
-  //   refs.galleryMessage.classList.add('hidden');
-  // }
-  // refs.galleryContainerLibrary.innerHTML = '';
-  
-    
-  //   renderMarkupLibrary(data);
-  }
+}
 
 
 async function onWatchedLibrary(evt) {
