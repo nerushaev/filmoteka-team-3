@@ -46,7 +46,7 @@ async function onWatchedLibrary(evt) {
   renderMarkupLibrary(dataWat);
 
   if (childNodesGallery.length === 0) {
-    console.log("aaa");
+    // console.log("aaa");
     refs.galleryMessage.classList.remove('hidden');
   }
   
@@ -68,7 +68,7 @@ async function onQueueLibrary(evt) {
   renderMarkupLibrary(dataQue);
   
     if (childNodesGallery.length === 0) {
-    console.log("aaa");
+    // console.log("aaa");
     refs.galleryMessage.classList.remove('hidden');
   }
 }

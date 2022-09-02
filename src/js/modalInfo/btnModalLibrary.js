@@ -26,14 +26,14 @@ let indexMovie = arrIdQueue.indexOf(idStorageQueue)
 arrIdQueue.splice(indexMovie, 1);
 localStorage.setItem(refs.LS_KEY_QUERY_MOVIE, JSON.stringify(arrIdQueue))
   const card = document.querySelector(`[data-id2="${filmIdQueue}"]`);
-  console.log(card);
+  // console.log(card);
   if (refs.galleryContainerLibrary) {
     card.remove();
   }
 
   const childNodesGallery = refs.galleryContainerLibrary.childNodes;
   if (childNodesGallery.length === 0) {
-    console.log("aaa");
+    // console.log("aaa");
     refs.galleryMessage.classList.remove('hidden');
   }
 }
@@ -66,7 +66,7 @@ localStorage.setItem(refs.LS_KEY_WATCH_MOVIE, JSON.stringify(arrIdWatched))
   
   const childNodesGallery = refs.galleryContainerLibrary.childNodes;
   if (childNodesGallery.length === 0) {
-    console.log("aaa");
+    // console.log("aaa");
     refs.galleryMessage.classList.remove('hidden');
   }
 }
