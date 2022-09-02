@@ -26,7 +26,7 @@ export async function getMovie(currentPage) {
 
       const response = await axios.get(`${refs.SEARCH_URL}?${parametrs}`);
       return response.data;
-      console.log(response);
+      // console.log(response);
   }
     catch (err) {
       console.log(err);

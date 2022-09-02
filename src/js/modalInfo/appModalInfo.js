@@ -45,7 +45,7 @@ async function onOpenModalInfo(evt) {
     const selectedMovie = allMovie.find(loadMovie => loadMovie.id === idMovie);
 
     appendInfoForModalMarkup(selectedMovie);
-    console.log(allMovie);
+    // console.log(allMovie);
     checkQueryStorage(quereMovies);
     checkWatchedStorage(watchMovies);
     document.body.classList.add('stop-scrolling');

@@ -32,7 +32,7 @@ async function loadQueryFilms() {
       }
     // Сохраняем полученую информацию в локал сторедж
     storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
-    console.log(response);
+    // console.log(response);
     // Обнуляем разметку
     refs.homePageGallery.innerHTML = "";
     // Рендерим из полученого массива объектов карточки
@@ -43,19 +43,19 @@ async function loadQueryFilms() {
     const totalResult = response.total_results;
     // Сохраняем общее колличество страниц
     let currentPage = response.page;
-    console.log(currentPage);
-      console.log(response.total_pages);
+    // console.log(currentPage);
+      // console.log(response.total_pages);
       
         const pagination = createPagination();
     pagination.setItemsPerPage(20);
     pagination.reset(totalResult);
     pagination.movePageTo(currentPage);
         
-        console.log(pagination);
+        // console.log(pagination);
       
     pagination.on('afterMove', e => {
       const currentPage = e.page;
-      console.log(currentPage);
+      // console.log(currentPage);
       onSearchPagination(currentPage)
       scrollUp();
     })
@@ -74,7 +74,7 @@ async function onSearchPagination(currentPage) {
   const data = response.results;
 
   storage.save(refs.LS_KEY_POPULAR_MOVIE, response.results);
-  console.log(data);
+  // console.log(data);
 
   clearPreviousResults();
   renderMarkupPopularFilms(data);
