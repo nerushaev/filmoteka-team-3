@@ -69,6 +69,7 @@
 .gallery__item__text {
     padding-top: 10px;
     opacity: 1;
+    transition: padding-left 250ms linear;
     // background-color: #fff;
 
     @include mq(tablet-only) {
